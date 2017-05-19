@@ -88,4 +88,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
-wikiner_data/
+*/wikiner_data/
+*/.idea/
+*/notebooks
