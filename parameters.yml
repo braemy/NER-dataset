@@ -1,0 +1,16 @@
+wikidata:
+  output_dir_collect_instance_subclass: /dlabdata1/braemy/wikidata-classification
+  output_dir: /dlabdata1/braemy/wikidata-classification/data2017-05-10_13-07-33-716641
+  id_to_subclass: id_subclass_of_dict
+  id_to_instance: id_instance_of_dict
+  id_to_title: id_title_dict
+  title_to_id: title_id_dict
+  PER: /dlabdata1/braemy/wikidata-classification/PER.p
+  LOC: /dlabdata1/braemy/wikidata-classification/LOC.p
+  ORG: /dlabdata1/braemy/wikidata-classification/ORG.p
+  MISC: /dlabdata1/braemy/wikidata-classification/MISC.p
+  wd_to_NER: /dlabdata1/braemy/wikidata-classification/mapping_wikidata_to_NER.p
+
+graph_id_to_vertex: /dlabdata1/braemy/wikidata-classification/graph_id_to_vertex.p
+graph: /dlabdata1/braemy/wikidata-classification/graph.xml.gz
+

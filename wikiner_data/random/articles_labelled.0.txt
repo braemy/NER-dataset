@@ -1,0 +1,110 @@
+Miles Sindercombe	p:person
+Herb Brooks Arena	f:building
+Child labor laws in the United States	c:concept
+Richardson High School	o:educational
+Operation Wrath of God	m:event:other
+Baruch	dab
+The Jackie Robinson Story	m:work:film
+The Kasidah	m:work:other
+Masjid Al-Istiqamah	f:building
+Silvena Sport	o:other
+Wet Mountain Valley	l:l:other
+Borthwick Castle	f:building
+Atelopus palmatus	c:life:animal
+HMS Hermes (95)	m:vessel
+Abejorral	l:g:town
+Belecthor II	p:fictional
+Dureford Abbey	f:building
+Frank Pepe Pizzeria Napoletana	o:corporation
+Girl in the Wind	m:product:album
+Wurm: Journey To The Center Of The Earth	m:product:software
+Armand de Pontmartin	p:person
+Overberg (Netherlands)	l:g:town
+Kawai, Iwate	l:g:town
+Alicia Gorey	p:person
+Clitoral crura	c:substance:other
+Honor system virus	c:concept
+Kim Crosby (singer)	p:person
+Edmond Roudnitska	p:person
+Carlos Delgado	p:person
+WKBD Sports	o:corporation
+Matthew Mbuta	p:person
+John Edmunds Apartment House	f:building
+Facilitation payment	c:concept
+Shobha Gurtu	p:person
+Bert Greene	p:person
+Spiraea thunbergii	c:life:plant
+Danica McKellar	p:person
+Western Heights	dab
+Dietrich Zander	p:person
+Provisional ballot	c:concept
+South Boston Speedway	f:other
+The Hunger for More	m:product:album
+Lt. Jane Doe (NCIS)	m:work:other
+Volvo Driving Soccer Mom	m:work:song
+December 2007 in rail transport	c:non-entity
+California Society of Printmakers	o:other
+Volcanoes of Java	c:non-entity
+Edward John Eyre	p:person
+HMS Wager	dab
+Audio Interchange File Format	m:?
+Georgia Lee	p:person
+Geneva, Washington	l:g:other
+La Neuville-Bosmont	l:g:town
+3-D Studios	o:corporation
+Edward Stack	p:person
+Chickies Ridge	l:l:other
+Heterobranchia	c:life:animal
+Huallaga	dab
+Rugby League Charity Shield (Great Britain)	m:event:sports
+Sheila O'Brien	p:person
+Martin Day	p:person
+Clive Matthew-Wilson	p:person
+Boomerang (The Creatures album)	m:product:album
+Venugopal Dhoot	p:person
+Liberian English	m:language
+Angico	l:g:other
+Simontornya Castle	f:building
+AsUnit	dab
+Rachel's	o:band
+Fairy Bay	l:lake_sea_ocean
+1992 in Afghanistan	c:non-entity
+Clifford Berry	p:person
+Maryland Route 336	f:road
+New York State Route 13	f:road
+Munir Malik	p:person
+Mary Sears	p:person
+Charles Wayne "Chuck" Day	p:person
+Michael Formanek	p:person
+Chubby Hubby (Ben & Jerry's flavor)	m:product:other
+Louisville Orchestra	o:band
+China National School of Administration	o:educational
+1258	c:concept
+National Lawyers' Congress	o:other
+Poggio-di-Nazza	l:g:town
+Dandelion Radio	o:corporation
+Washer (hardware)	c:concept
+Brad Smith	dab
+Felix Carlebach	p:person
+Renaison	l:g:town
+NORPAC	o:other
+International Blind Sports Federation	o:other
+Alexander Keith, Jr.	p:person
+Omer Vanaudenhove	p:person
+Pech Merle	l:l:other
+William Tricker	p:person
+UEFA Women's Cup 2003-04	m:event:sports
+The London Welbeck Hospital	o:hospital
+White-throated Oxylabes	c:life:animal
+Oldham Above Town	l:l:region
+EHC Biel	o:sport
+Route nationale (France)	c:concept
+Ephiny	p:fictional
+Daytime wetting	c:concept
+Newcastle Ravens	o:sport
+USS Yazoo (1865)	m:vessel
+Alexandre Alves	p:person
+Ancient Hebrew language	dab
+Jon Krosnick	p:person
+Dhulbahante	m:norp:nationality
+Shabanu	m:work:book

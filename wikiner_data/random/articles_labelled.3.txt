@@ -1,0 +1,110 @@
+Diquat	c:substance:chemical
+Indo-Aryan civilizations	m:norp:nationality
+St. Louis County Road 90	f:road
+John Dudra	p:person
+East Elloe Motor Club	o:other
+Mastacembelus cunningtoni	c:life:animal
+Occasionalism	c:concept
+Chiribiquete Emerald	c:life:animal
+Madman theory	c:concept
+CNX Nifty Junior	m:?
+Corynebacterium granulosum	c:life:other
+Federschwert	c:concept
+Arcade emulator	c:concept
+University Music Society	dab
+HMS Invincible (1747)	m:vessel
+Venery	dab
+Georgetown University Medical Center	o:educational
+Impact Fertilisers	o:corporation
+Terri McGreggor	p:fictional
+Rehman Rashid	p:person
+Prince Edmund (Blackadder)	p:fictional
+Time and Again (TV series)	m:work:other
+South Taranaki District	l:g:other
+Christiania Rebels	o:sport
+Richard Hurndall	p:person
+Alexander Ramsey House	f:building
+Desadarium	o:band
+Waltham transmitting station	f:other
+History of the Republic of Macedonia	c:non-entity
+Al-Fitna Al-Kubra	m:work:book
+Art Bergmann	p:person
+Centre 200	f:building
+White Pine, Michigan	l:g:other
+Kilobaud Microcomputing	m:work:other
+M80 Stiletto	m:vessel
+Southern New England Telephone	o:corporation
+Orest Miller	p:person
+Unnatural act	c:concept
+Medieval Armenia	c:non-entity
+WJNX	o:corporation
+Ligia oceanica	c:life:animal
+Piglet (Winnie the Pooh)	p:fictional
+Unitas	dab
+Dudeney number	c:concept
+Lowes (disambiguation)	dab
+Surgery (disambiguation)	dab
+Cheyenne Mountain Entertainment	o:corporation
+Sint-Niklaas	l:g:town
+Boys & Girls (EP)	m:product:album
+Steffan Tubbs	p:person
+Karlsson-on-the-Roof	p:fictional
+Berezhanskyi Raion	l:l:region
+List of people who have disappeared	c:non-entity
+Denim	c:substance:other
+The 11th Hour (video game)	m:product:software
+Jack Longland	p:person
+Becky Jago	p:person
+Indianapolis International Airport	f:airport
+Leon Jenkins	p:person
+B-17, Queen of the Skies	m:product:other
+Registerware	c:concept
+Personal Best (Selena)	m:product:album
+Hempstead High (album)	m:product:album
+Hindawi Affair	m:event:other
+Avia BH-23	m:product:vehicle
+Catherine Tyldesley	p:person
+James Craig (Newcastle)	p:person
+Indian Hill, Ohio	l:g:town
+1993 FILA Wrestling World Championships	m:event:sports
+Saka language	m:language
+Saint Louis University School of Law	o:educational
+Brian Tutt	p:person
+The Affair of the Necklace (disambiguation)	dab
+Waarschoot	l:g:other
+Nick Navarro	p:person
+Monthyon	l:g:other
+Burj Al Arab	o:hotel
+Arthur Baker	dab
+Gmina Pcim	l:g:other
+Musical Starstreams	m:work:other
+Online transaction processing	c:concept
+Harold Whitlock	p:person
+Never Gonna Give You Up (disambiguation)	dab
+Almirida	o:hotel
+Puerto Quito	l:g:town
+Multimedia Fusion	m:product:software
+The Groundhog Day (The O.C. episode)	m:work:other
+Ham's	o:corporation
+Alessandro Viana da Silva	p:person
+Hobotalk	o:band
+The Jig	m:work:song
+Harald Haakonsson	p:person
+Insulin lispro	c:substance:chemical
+Alexander Bont	p:fictional
+Ireul	p:fictional
+Rob deLeeuw	p:person
+I Like to Riff	m:product:album
+DomainKeys Identified Mail	m:?
+Gulf Coast Yankees	o:sport
+Sageretia melliana	c:life:plant
+List of Espada in Bleach	c:non-entity
+KEMC	dab
+Suzanne Adams	p:person
+Australian Pratincole	c:life:animal
+On Thursday We Leave for Home	m:work:other
+Protoss	m:norp:nationality
+Shielded metal arc welding	c:concept
+Marc Benioff	p:person
+Islampur (Uttar Dinajpur)	l:g:town
+Idaho State Liquor Dispensary	o:government

@@ -1,0 +1,200 @@
+A cappella	c:concept
+Advertising	c:concept
+Age of Enlightenment	?
+American Airlines	o:corporation
+Anaheim Ducks	o:sport
+Atlanta Falcons	o:sport
+Australian Labor Party	o:political
+BBC News	o:corporation
+Baekje	l:g:other
+Baltimore Orioles	o:sport
+Bar association	c:concept
+Barack Obama	p:person
+Bengali language	m:language
+Blood	c:substance:other
+Boston Bruins	o:sport
+Boston University	o:educational
+Botswana	l:g:country
+British Ceylon	l:g:country
+Brown University	o:educational
+Bruce Springsteen	p:person
+Cairns, Queensland	l:g:town
+Camden, New Jersey	l:g:town
+Canadian Forces	o:army
+Canadian House of Commons	o:government
+Canadian House of Commons	o:government
+Canal	c:concept
+Cape Town	l:g:town
+Carlos Santana	p:person
+Cement	c:substance:other
+Chattanooga, Tennessee	l:g:town
+Clemson University	o:educational
+Colorado	l:g:state
+Colorado Rockies	o:sport
+Combatant Status Review Tribunal	o:other
+Communes of the Eure-et-Loir department	c:non-entity
+Communes of the Haute-Garonne department	c:non-entity
+Community college	c:concept
+Contemporary Christian music	c:concept
+Cotton	c:concept
+Dallas, Texas	l:g:town
+Dalmatia	l:g:other
+December 11	num:date
+December 5	num:date
+Discus throw	c:concept
+Dover	l:g:town
+Drama	c:concept
+East Germany	l:g:country
+Edgar Rice Burroughs	p:person
+El Salvador	l:g:country
+Elizabeth II of the United Kingdom	p:person
+English Restoration	m:event:other
+English language	m:language
+Erie, Pennsylvania	l:g:town
+European Commission	o:government
+Fahrenheit	?
+Family (biology)	c:concept
+February 27	num:date
+February 8	num:date
+Find A Grave	m:work:other
+Foo Fighters	o:band
+Galileo Galilei	p:person
+Geffen Records	o:corporation
+Gender	c:concept
+Geography	c:concept
+Georgetown University	o:educational
+Germans	m:norp:nationality
+Grey Cup	m:event:other
+Grimsby Town F.C.	o:sport
+Guiding Light	m:work:other
+Gulf War	m:event:war
+HTML	m:?
+Hamburg	l:g:town
+Heavy metal music	c:concept
+Henry III of England	p:person
+Herbert Hoover	p:person
+Herodotus	p:person
+Heroin	c:substance:drug
+Hiking	c:concept
+Home Secretary	c:per
+Honda Racing F1	o:sport
+Houston, Texas	l:g:town
+Hubble Space Telescope	m:?
+Huddersfield	l:g:town
+Hypertension	c:concept
+Igor Stravinsky	p:person
+Inclination	c:concept
+Iran	l:g:country
+J. R. R. Tolkien	p:person
+January 8	num:date
+Jefferson Davis	p:person
+Jersey City, New Jersey	l:g:town
+John the Baptist	p:person
+Jordan Grand Prix	o:sport
+Julius Caesar	p:person
+July 25	num:date
+June 19	num:date
+Kanagawa Prefecture	l:g:other
+Karlsruhe	l:g:town
+Kosovo	l:g:country
+Lake Ontario	l:lake_sea_ocean
+Late Night with Conan O'Brien	m:work:other
+Latvia	l:g:country
+Lieutenant Colonel	c:per
+Limestone	c:substance:other
+Linguistics	c:concept
+Lion	c:life:animal
+List of educators	c:non-entity
+Logic	c:concept
+Logic	c:concept
+Louisiana State University	o:educational
+Love	c:concept
+Lower Saxony	l:g:other
+Lublin	l:g:town
+Lufthansa	o:corporation
+Madison, Wisconsin	l:g:town
+Major League Soccer	o:other
+Mannheim	l:g:town
+March 17	num:date
+March 17	num:date
+May 27	num:date
+McGill University	o:educational
+Member of Parliament	c:per
+Metacritic	m:work:other
+Miniseries	c:concept
+Minister (Christianity)	c:concept
+Monarchy	c:concept
+Moth	c:life:animal
+Muslim	m:norp:religion
+New Jersey Devils	o:sport
+Niger	l:g:country
+Niger	l:g:country
+North Africa	l:l:region
+North Sea	l:lake_sea_ocean
+Nottingham Forest F.C.	o:sport
+November 1	num:date
+November 11	num:date
+November 4	num:date
+October 15	num:date
+October 30	num:date
+Opera	c:concept
+OutKast	o:band
+Ozzy Osbourne	p:person
+Phoenix Suns	o:sport
+Portugal	l:g:country
+President of the United States	c:per
+Primary school	c:concept
+Progressive Conservative Party of Canada	o:political
+Psychologist	c:concept
+Public house	c:concept
+Punjabi language	m:language
+Qantas	o:corporation
+Queens	l:g:other
+Quentin Tarantino	p:person
+Research	c:concept
+Rhode Island	l:g:state
+Rice	c:life:plant
+Rolling Stone	m:work:other
+Romance languages	c:concept
+Saint	c:concept
+Salt	c:substance:chemical
+Sassanid Empire	l:g:other
+Saxony	l:g:state
+Seventh-day Adventist Church	o:religious
+Simplified Chinese character	c:concept
+Speaker (politics)	c:concept
+Sport	c:concept
+Star Trek: Enterprise	m:work:other
+Stomach	c:substance:other
+Super Bowl	m:event:sports
+Sussex County, Delaware	l:g:other
+Swansea City A.F.C.	o:sport
+Syria	l:g:country
+TV.com	m:work:other
+Tampa, Florida	l:g:town
+Team handball	c:game
+The Beach Boys	o:band
+The Police	o:band
+The WB Television Network	m:work:other
+The X-Files	m:work:other
+The Young and the Restless	m:work:other
+Tin	c:substance:chemical
+Tom Hanks	p:person
+Totalitarianism	c:concept
+Ukrainians	m:norp:nationality
+United Kingdom of Great Britain and Ireland	l:g:country
+United States National Academy of Sciences	o:corporation
+United States Navy	o:government
+University of Vienna	o:educational
+University of Washington	o:educational
+Vegetarianism	c:concept
+Veneto	l:g:other
+Vermont	l:g:state
+Victoria of the United Kingdom	p:person
+Victoria, British Columbia	l:g:town
+Washington University in St. Louis	o:educational
+Woodrow Wilson	p:person
+World	c:concept
+Wrestling	c:concept
+Zen	m:?
+Zinc	c:substance:chemical

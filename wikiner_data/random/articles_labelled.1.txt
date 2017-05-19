@@ -1,0 +1,110 @@
+Interrelated Demand and Supply	c:concept
+FC Germania 06 Schwanheim	o:sport
+Club Libertad	o:sport
+Auberry, California	l:l:region
+Applied behavior analysis	c:concept
+Induced metric	c:concept
+Kyra Schon	p:person
+Brahma Chellaney	p:person
+Joseph Renzulli	p:person
+Argentine PGA Championship	m:event:sports
+Dokkiri Doctor	m:work:other
+Secretariat of Public Education	o:government
+HIST1H2BG	c:substance:other
+Spallumcheen, British Columbia	l:g:other
+Ronald Venetiaan	p:person
+Bambous	l:g:town
+Tudor Vladimirescu (disambiguation)	dab
+La Beata de Piedrahita	p:person
+Aural & Hearty	m:product:album
+Cuetzalan, Puebla	l:g:town
+The Dam Short Film Festival	m:event:other
+List of space travelers by nationality	c:non-entity
+World Mixed Teams Championship	m:event:sports
+Craig O'Reilly	p:person
+Anne-Lise Bardet	p:person
+Major League Baseball on regional sports networks	c:non-entity
+Electrojet	c:concept
+Electoral division of Nelson (Tasmania)	l:g:other
+Tornadotus	l:l:river
+Kindaichi Case Files	m:work:other
+Millennium Galleries	o:museum
+Stone Creek Golf Club	o:other
+Kinabatangan River	l:l:river
+Bangladesh Military Academy	o:educational
+Marlin (disambiguation)	dab
+D-Q University	o:educational
+Ibi River	l:l:river
+George Hoadley (disambiguation)	dab
+Cinq-Mars-la-Pile	l:g:town
+Vyricherla Kishore Chandra Suryanarayana Deo	p:person
+Paul D. Stroop	p:person
+Opening Day Partners	o:corporation
+Gordon Getty	p:person
+James Thompson Bain	p:person
+Georges de Selve	p:person
+Kermen	l:g:town
+David Bennett (New Zealand)	p:person
+Col du Lein	l:l:other
+Dieselnoi Chor Thanasukarn	p:person
+Itzehoe	l:g:town
+1983 Montreal Expos season	c:non-entity
+Dionaea muscipula 'Bohemian Garnet'	c:life:plant
+Bathyscaphe Trieste II	m:vessel
+Karl Emanuel, Landgrave of Hesse-Rotenburg	p:person
+North Thompson Oxbows Manteau Provincial Park	l:l:other
+Bird Island (Massachusetts)	l:g:other
+Tiszacsermely	l:g:town
+Augustan poetry	c:concept
+Tseraskiy (crater)	l:l:other
+Institute of Technology, Sligo	o:educational
+Work Family	c:concept
+List of Malians	c:non-entity
+Arturo Frei	p:person
+Detroit Tigers managers and ownership	c:non-entity
+Homosynaptic	c:concept
+Rebecca Cardon	p:person
+Princeton Meadows, New Jersey	l:l:other
+Peter McDonald (tribal council chairman)	p:person
+Oplophorus-luciferin 2-monooxygenase	c:substance:chemical
+Counting	c:concept
+Luzer	o:band
+Fair Credit Reporting Act	m:law
+Nauru International Airport	f:airport
+Jeans instability	c:concept
+Liebert (company)	o:corporation
+Subramaniam v. Public Prosecutor	m:courtcase
+Hilperton	l:g:town
+Prince of Ligne	c:per
+Nellysford, Virginia	l:g:town
+Kitayama, Wakayama	l:g:town
+Aris Kalaizis	p:person
+Milly-Molly-Mandy	?
+G. W. Bryant	p:person
+SPA Truck Company	o:corporation
+Robert Gillmor	p:person
+Spiralothelphusa	c:life:animal
+Neutron star spin-up	c:concept
+Shmemis	f:building
+Kuolema Tekee Taiteilijan	m:work:song
+Recife Brazil Temple	f:building
+Vektor Grafix	o:corporation
+Fortnight	c:concept
+Nukesentinel	m:product:software
+Telmatobiinae	c:life:animal
+Association Footballers' Union	o:other
+Space Marines (Warhammer 40,000)	m
+Jeanette Lee (pocket billards)	p:person
+Lake Tomahawk, Wisconsin	l:g:town
+Lake Bramant	l:l:water
+Queensmen	dab
+Game balance	c:concept
+Nkwesi	l:g:town
+Nathan Blake	p:person
+Bordj El Bahri	l:l:other
+Wolfwil	l:g:other
+Gloria (Disillusion album)	m:product:album
+Toxandri	m:norp:nationality
+Tzu Chi	o:other
+Alpha	dab
+Jack Cassel	p:person

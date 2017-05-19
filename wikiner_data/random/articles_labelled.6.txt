@@ -1,0 +1,110 @@
+Gian Paolo Chiti	p:person
+List of TechTV Personalities	c:non-entity
+0-6-6-0	c:concept
+Daytona Beach Islanders	o:sport
+List of ecoregions in Yemen	c:non-entity
+Fight Back! with David Horowitz	m:work:other
+Turkey Youth Union	o:other
+Anthurium grex-avium	c:life:plant
+Protestant Church of Luxembourg	o:religious
+Rana Pierniamarilla	c:life:animal
+Wheelchair basketball	c:game
+Reyero	l:g:other
+The Fatal Warning	m:work:film
+Grammy Award for Best Country Song	m:work:other
+Chance!	m:work:song
+Secretary of State of New Jersey	c:per
+William Drummond of Logiealmond	p:person
+Human rights in Albania	c:non-entity
+Mustafa Qureshi	p:person
+Kusu Kusu	o:band
+Chris Green (football player)	p:person
+Liam Reddox	p:person
+Selan	p:person
+James Kimber	p:person
+Piscataquog River	l:l:river
+All of This - The "Live" Rarities	m:product:album
+SJS	dab
+White Cube	o:museum
+Nizhniy-Novgorod Radio Laboratory	o:other
+Spencer-Roloson Winery	o:corporation
+Star Mountains	l:l:other
+Draken	p:person
+Ki Ki, South Australia	l:g:town
+List of films directed by Mani Ratnam featuring A R Rahman	c:non-entity
+Donato Acciaioli	p:person
+Doodoo Wah	o:band
+Marcus Lloyd	p:person
+Maximus the Confessor	p:person
+Tom Coster	p:person
+Rajiv Menon	p:person
+Brian Reynolds Myers	p:person
+Port Waikato (NZ electorate)	l:l:region
+Resolution Island (Nunavut)	l:l:other
+Dennis Green	p:person
+Airstone	c:concept
+Niall McDarby	p:person
+Neuhaus an der Pegnitz	l:g:other
+Guy Vanderhaeghe	p:person
+Fidelity National Financial	o:corporation
+Francis Mallet	p:person
+Newham North West (UK Parliament constituency)	l:g:other
+Bellengreville	dab
+International rankings of Pakistan	c:non-entity
+Kuksa	c:concept
+Korea Post	o:government
+International Telegram	dab
+Fulton County, Georgia	l:g:other
+Milas Poli	m:work:song
+Robert Frost Middle School (Montgomery County, Maryland)	o:educational
+Politics in krav maga	c:non-entity
+Battle of Stony Lake	m:event:war
+Mick Frawley	p:person
+Edit conflict	c:concept
+The Gadsden Times	o:corporation
+Battle of Nineveh (627)	m:event:war
+Data logger	c:concept
+La Crosse, Virginia	l:g:town
+Prensa Latina	o:corporation
+Christopher Middleton (navigator)	p:person
+Caucasus mixed forests	l:l:other
+Core Sound	l:lake_sea_ocean
+Hope (Toshiko Akiyoshi album)	m:product:album
+Thermal energy	c:concept
+Notch Lake	l:lake_sea_ocean
+Dasyatis	c:life:animal
+Okot	dab
+Kleinfeld	dab
+Dirty Sanchez (sexual act)	c:concept
+Viqueque (district)	l:g:other
+Ching Chuan Kang Air Base	f:airport
+Little River (Delaware)	l:l:river
+Madhurey	m:work:film
+Murutinga do Sul	l:g:other
+Butterbur	c:life:plant
+Staffordshire Regiment	o:army
+Sparta, New York	l:g:town
+Suk Trio	o:band
+Wedding videography	c:concept
+Edward M. Beers	p:person
+Sherlock (software)	m:product:software
+The Kampong	o:?
+Marsiling MRT Station	f:other
+Dick Berggren	p:person
+Ivory-billed Aracari	c:life:animal
+Genome	c:concept
+Lion's Den (The Outer Limits)	m:work:other
+Walking	c:concept
+Robert Freeman Wexler	p:person
+Mine exploration	c:concept
+Dalston Kingsland railway station	f:other
+Dallas, South Dakota	l:g:town
+2004-05 ISL Basketball	m:event:?
+Jiffs	c:concept
+Helena Hillar Rosenqvist	p:person
+Bandarban Sadar Upazila	l:g:other
+Squamish, British Columbia	l:g:town
+John Garabedian	p:person
+Rhomboid muscle	c:concept
+Ovacome	o:other
+Schefflera beccariana	c:life:plant

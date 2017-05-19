@@ -1,0 +1,110 @@
+Bobby Bauer	p:person
+Monetary reform	c:concept
+Pennsylvania Senate, District 11	l:g:other
+Female Saikyo	m:event:sports
+Estrid Margarete Svendsdatter	p:person
+Benjamin Mays	p:person
+Andy Cairns	p:person
+Maureen Dunbar	p:person
+Harrow local elections	c:concept
+Trepanation (album)	m:product:album
+Daisuke Mori	p:person
+Dobry	m:work:book
+Richard Fussell	p:person
+Benjamin Ireson	p:person
+Yavneh Academy	o:educational
+Forques	l:g:town
+Digital media receiver	c:concept
+Debt on our Doorstep	o:other
+Off the Map	m:work:book
+USS Crowninshield (DD-134)	m:vessel
+Geroda, Thuringia	l:g:other
+Hydroxylammonium nitrate	c:substance:chemical
+The Scarlatti Inheritance	m:work:book
+Eleutherodactylus emleni	c:life:animal
+Shrikhande graph	c:concept
+Winchester measure	c:concept
+Prenatal development	c:concept
+West Virginia Route 4	f:road
+Wenas Creek Mammoth	c:life:animal
+Winchester 1200	m:product:weapon
+Kaedaase	p:fictional
+Badinan (region)	l:l:region
+Laura Bridgman	p:person
+Jozef Van Hove	p:person
+Abdominal wall	c:substance:other
+Hansel and Gretel: An Opera Fantasy	m:work:film
+Leslie Silva	p:person
+Berborite	c:substance:chemical
+Richard de Beauchamp, 13th Earl of Warwick	p:person
+Jammu Kashmir Liberation Front (Yasin Malik)	o:political
+Kisaburo Osawa	p:person
+Woodhey High School	o:educational
+English Boy	m:work:song
+Comprehensive Convention on International Terrorism	m:law
+Special school	c:concept
+Carmen Hill	p:person
+Carol Brooks MacNeil	p:person
+Benzyl acetate	c:substance:chemical
+Didacus Ximenes	p:person
+Peter Jay	p:person
+Diego Lamelas	p:person
+Theosophical Society in America	o:other
+IMac (Intel-based)	m:product:other
+Chalcogel	c:substance:chemical
+Breguet 270 Series	m:product:vehicle
+Neilly Gibson	p:person
+All-Winners Squad	o:sport
+Skogie Studios	o:corporation
+Hurricane Agnes	m:event:hurricane
+Raja Nazrin Shah	p:person
+Ghiasetdin of Kazan	p:person
+Kiul junction	l:g:town
+Blumfeld	o:band
+Heligoland-Zanzibar Treaty	m:law
+Dicranochaete	c:life:plant
+Foreign relations of Kiribati	c:non-entity
+Julien Havet	p:person
+Joe Don Looney	p:person
+Airborne (album)	m:product:album
+Bertogne	l:g:other
+Horses in art	c:non-entity
+Kiesen	l:g:other
+PBB	dab
+ExoSee	m:product:software
+Bukharan tenga	?
+Victor Bo	p:person
+Liliana Herrero	p:person
+Groezrock	m:event:other
+Thann, Haut-Rhin	l:g:other
+Regional Committee for Cycling in Martinique	o:other
+Yli	l:g:town
+Mahendra Lal Wadhwa	p:person
+Vimont (AMT)	f:other
+Costa Victoria	m:vessel
+Sula	dab
+Battle of Who Could Care Less	m:work:song
+Dresden (region)	l:g:other
+Brendan Jones	dab
+Finduilas of Dol Amroth	p:fictional
+Lloyd W. Newton	p:person
+Digitized Sky Survey	m:product:other
+ESignal	m:product:software
+3beta(or 20alpha)-hydroxysteroid dehydrogenase	c:substance:chemical
+Semyon Lavochkin	p:person
+Renningen	l:g:town
+Newhall Pass interchange	f:road
+Arakiel	p:fictional
+Sonnet 98	m:work:other
+Sturmey-Archer	o:corporation
+Wayne Jones	p:person
+Aorist	c:concept
+Seraband rug	c:substance:other
+Dihydroquinidine	c:substance:chemical
+Malkals	m:norp:nationality
+Tunggiya	m:norp:nationality
+Raymond Hatton	p:person
+Act of Uniformity	m:law
+Dom Pedro	dab
+Ravensdale Park	l:g:town
+Maria Carrillo High School	o:educational

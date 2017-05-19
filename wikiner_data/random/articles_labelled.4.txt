@@ -1,0 +1,110 @@
+Scott Township, Ontario	l:g:town
+Gordon Wren	p:person
+Toszowice	l:g:town
+Balgreen	l:l:other
+Imadate, Imadate, Fukui	l:g:town
+Scouting in New Brunswick	c:non-entity
+When It's Love	m:work:song
+The Final Cut (TV serial)	m:work:other
+USS Fletcher	dab
+Eric Thomas (football player)	p:person
+Naukri.com	o:other
+Michael Williams (actor)	p:person
+Abitibi County, Quebec	l:g:other
+Trains in the Netherlands	c:non-entity
+Brasil Telecom	o:corporation
+Ren County	l:g:other
+Almaty Province	l:g:state
+Rumex	c:life:animal
+Thomas Jones (missionary)	p:person
+Japan National Route 40	f:road
+Corporate poverty	c:concept
+Mandy Stadtmiller	p:person
+Muhammad ibn Idris	p:person
+List of closed Sydney railway stations	c:non-entity
+Evermore (album)	m:product:album
+White Horde	l:g:state
+Parampara	c:concept
+John Inglis (footballer)	p:person
+Doug Padgett	p:person
+Anna Maxwell Martin	p:person
+Queen City Yacht Club (Seattle)	o:other
+997 Priska	l:l:space
+Anekal	l:g:other
+Minolta X-700	m:product:other
+Marvel Super Heroes (role-playing game)	m:product:software
+2004 French Open - Women's Doubles	c:non-entity
+Let's Face It!	m:work:play
+Bhimber	l:g:town
+The Bellero Shield	m:work:other
+Big Scary Animal	m:work:song
+Vay	m:product:software
+National Fire Danger Rating System	m:?
+Joseph Dines	p:person
+Bulverde	dab
+Emanem Records	o:corporation
+Pete Harris	p:person
+List of Galaxy Express 999 episodes	c:non-entity
+Architecture of Mac OS X	c:non-entity
+Fusker	c:non-entity
+Chris Sagramola	p:person
+Resignation from the British House of Commons	c:non-entity
+IEEE John von Neumann Medal	m:work:other
+Chief Minister of the State of Penang	c:per
+466th Fighter Squadron	o:army
+Secrets and Lies	dab
+Angus Reid	p:person
+Gypsy Grind	o:band
+Bartonellaceae	c:substance:?
+Ernest Louis, Grand Duke of Hesse	p:person
+Eugene Garfield	p:person
+Siel DK70	m:product:other
+European Safety and Reliability Association	o:other
+Blinded Horses	m:product:album
+Amphoe Sadao	l:g:town
+Loin (film)	m:work:film
+The Government Pension Fund of Norway	o:government
+Love, Inc.	dab
+Sikkim national football team	o:sport
+Needle time	c:concept
+Sinnamon Park, Queensland	l:g:other
+John Aloysius Maguire	p:person
+Walter Ellis	p:person
+Minnajima	dab
+Thomas Fleming (judge)	p:person
+G. E. Berrios	p:person
+Dimmitt Independent School District	l:g:other
+Saint-Affrique	l:g:other
+Abdul Razak Mohaideen	p:person
+Hikone Station	f:other
+Belchamp Otten	l:g:town
+Minority Report (Jay-Z song)	m:work:song
+Data Universal Numbering System	m:?
+Billie Holiday	p:person
+Nuria Juncosa	p:person
+Ab-32	m:law
+Articulate sign	c:concept
+Farrah Forke	p:person
+De Souza	dab
+Zhang Xiaoguan	p:person
+Lincoln Christ's Hospital School	o:educational
+California Coastal Records Project	m:work:?
+Lakehurst Mall	o:other
+Anchorage Island, New Zealand	l:l:other
+Alexander Sibiryakov	p:person
+Shrub-steppe	c:concept
+Ivana Baiul	p:fictional
+Faerie Stories	m:product:album
+Douglass Township, Michigan	l:g:town
+Microsoft Help	dab
+James Eli Watson	p:person
+Rogue in Space	m:work:book
+SLOSS Debate	m:?
+Mount Hawthorn, Western Australia	l:l:other
+Binary logarithm	c:concept
+1930 New York State Route renumbering	c:concept
+Heldenstein	l:g:other
+Committee on Jewish Law and Standards	o:other
+Cragus (Lycia)	l:g:town
+Network Ten	o:corporation
+Linda Thompson (actress)	p:person

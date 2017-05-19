@@ -1,0 +1,110 @@
+Criterion of multiple attestation	c:concept
+Lomar	l:l:region
+Japanese honorifics	c:concept
+David Barrett (American football)	p:person
+Dan R. MacDonald	p:person
+Justin Bonaventure Morard de Galles	p:person
+Cyrus and John	?
+Bare Ash	l:g:town
+1500s in music	c:non-entity
+Gorebridge	l:g:town
+Walter Reed (actor)	p:person
+Rahman Hallaci	p:person
+Jacques Foccart	p:person
+European Institute of Oncology	o:other
+Fourth Diet of Speyer	m:event:other
+Hermann Einstein	p:person
+Thanksgiving Tower	f:building
+Masked Apalis	c:life:animal
+Dudiyora Horaata	o:political
+Richard Dansky	p:person
+The Potbelleez	o:band
+Nanban trade	c:concept
+Zoobilee Zoo	m:work:other
+Priessnitz	dab
+UK railway stations - N	c:non-entity
+Grimoire Games	o:corporation
+Hoehne, Colorado	l:g:town
+Lewis County, Idaho	l:g:other
+Wagoner Armory	o:corporation
+Steven Bauer	p:person
+Fishing Creek (Susquehanna River)	l:l:river
+Hasan Gemici	p:person
+Strange Ways	o:corporation
+Gmina Rydzyna	l:g:other
+Thirthahalli	l:g:town
+Eisenbach	l:g:town
+List of Ranches and Stations	c:non-entity
+Hero Ba-Ban	p:fictional
+Rubab Raza	p:person
+Steve Palmer	p:person
+Judah ben Isaac Cardinal	p:person
+Thackerville, Oklahoma	l:g:town
+Satellite Award for Best Original Song	m:work:other
+Overachievement	c:concept
+Sudbury Wolves (disambiguation)	dab
+Crawford County, Indiana	l:g:other
+County Route 632 (Ocean County, New Jersey)	f:road
+1920 in sports	c:non-entity
+Missing in Action (film)	m:work:film
+Polish Resettlement Corps	o:government
+Pyruvic acid	c:substance:chemical
+John Horbury Hunt	p:person
+Jaadugar	m:work:film
+Congenic	c:concept
+MTV Video Music Award for Best Hip-Hop Video	m:work:other
+John Altoon	p:person
+Tia Neiva	p:person
+Tradition	c:concept
+Ysanne Churchman	p:person
+Michele Leggott	p:person
+The Mighty	m:work:film
+Vitali Berezovski	p:person
+Coosada, Alabama	l:g:town
+Vasant Ranjane	p:person
+Jimmy Shea	p:person
+Center for Independent Futures	o:other
+NEC (football club)	o:sport
+Ward (band)	o:band
+Greenrow	l:g:town
+Norwegian Wood (novel)	m:work:book
+Bullington	dab
+Faces of Death II	m:work:film
+Abdul Hakim Bukhary	p:person
+Weitersbach	l:g:other
+Administrative proceeding	c:concept
+Battle of the City of Legion	m:event:war
+Martens's Warbler	c:life:animal
+Hitoichiba Station	f:other
+1720s in Wales	c:non-entity
+Oregon Route 58	f:road
+John R. Hendricks	p:person
+Liriope (nymph)	p:fictional
+Allegations of mass graves at Chemmani	c:non-entity
+History of Ford Motor Company	c:non-entity
+Su-Chow	dab
+Babur	p:person
+Austrian National Union of Students	o:other
+Intrinsyc	o:corporation
+Horace A. Hildreth	p:person
+Dinosaur (Disney's Animal Kingdom)	m:product:other
+Ulf Andersson	p:person
+Beuerberg Abbey	f:building
+Gandini Lianos	p:animal
+Hindgut	c:substance:other
+Adsorption Method for Sampling of Dioxins and Furans	m:?
+Frank M. Gibson Trophy	m:work:other
+Huw Jenkins	p:person
+Travis Williams (basketball)	p:person
+Kaluwalhatian	l:l:?
+Association for the Rose in the Fist	o:political
+Townsend Church of England School	o:educational
+Yhden Enkelin Unelma	m:product:album
+Joseph W. White	p:person
+The Sixth Sense	m:work:film
+HMNZS Tutira (F420)	m:vessel
+White point	c:concept
+Hyphen War	m:event:other
+Gnuboy	m:product:software
+Guaifer of Benevento	p:person
+Justus Lipsius building	f:building

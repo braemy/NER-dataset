@@ -1,0 +1,1100 @@
+Miles Sindercombe	p:person
+Herb Brooks Arena	f:building
+Child labor laws in the United States	c:concept
+Richardson High School	o:educational
+Operation Wrath of God	m:event:other
+Baruch	dab
+The Jackie Robinson Story	m:work:film
+The Kasidah	m:work:other
+Masjid Al-Istiqamah	f:building
+Silvena Sport	o:other
+Wet Mountain Valley	l:l:other
+Borthwick Castle	f:building
+Atelopus palmatus	c:life:animal
+HMS Hermes (95)	m:vessel
+Abejorral	l:g:town
+Belecthor II	p:fictional
+Dureford Abbey	f:building
+Frank Pepe Pizzeria Napoletana	o:corporation
+Girl in the Wind	m:product:album
+Wurm: Journey To The Center Of The Earth	m:product:software
+Armand de Pontmartin	p:person
+Overberg (Netherlands)	l:g:town
+Kawai, Iwate	l:g:town
+Alicia Gorey	p:person
+Clitoral crura	c:substance:other
+Honor system virus	c:concept
+Kim Crosby (singer)	p:person
+Edmond Roudnitska	p:person
+Carlos Delgado	p:person
+WKBD Sports	o:corporation
+Matthew Mbuta	p:person
+John Edmunds Apartment House	f:building
+Facilitation payment	c:concept
+Shobha Gurtu	p:person
+Bert Greene	p:person
+Spiraea thunbergii	c:life:plant
+Danica McKellar	p:person
+Western Heights	dab
+Dietrich Zander	p:person
+Provisional ballot	c:concept
+South Boston Speedway	f:other
+The Hunger for More	m:product:album
+Lt. Jane Doe (NCIS)	m:work:other
+Volvo Driving Soccer Mom	m:work:song
+December 2007 in rail transport	c:non-entity
+California Society of Printmakers	o:other
+Volcanoes of Java	c:non-entity
+Edward John Eyre	p:person
+HMS Wager	dab
+Audio Interchange File Format	m:?
+Georgia Lee	p:person
+Geneva, Washington	l:g:other
+La Neuville-Bosmont	l:g:town
+3-D Studios	o:corporation
+Edward Stack	p:person
+Chickies Ridge	l:l:other
+Heterobranchia	c:life:animal
+Huallaga	dab
+Rugby League Charity Shield (Great Britain)	m:event:sports
+Sheila O'Brien	p:person
+Martin Day	p:person
+Clive Matthew-Wilson	p:person
+Boomerang (The Creatures album)	m:product:album
+Venugopal Dhoot	p:person
+Liberian English	m:language
+Angico	l:g:other
+Simontornya Castle	f:building
+AsUnit	dab
+Rachel's	o:band
+Fairy Bay	l:lake_sea_ocean
+1992 in Afghanistan	c:non-entity
+Clifford Berry	p:person
+Maryland Route 336	f:road
+New York State Route 13	f:road
+Munir Malik	p:person
+Mary Sears	p:person
+Charles Wayne "Chuck" Day	p:person
+Michael Formanek	p:person
+Chubby Hubby (Ben & Jerry's flavor)	m:product:other
+Louisville Orchestra	o:band
+China National School of Administration	o:educational
+1258	c:concept
+National Lawyers' Congress	o:other
+Poggio-di-Nazza	l:g:town
+Dandelion Radio	o:corporation
+Washer (hardware)	c:concept
+Brad Smith	dab
+Felix Carlebach	p:person
+Renaison	l:g:town
+NORPAC	o:other
+International Blind Sports Federation	o:other
+Alexander Keith, Jr.	p:person
+Omer Vanaudenhove	p:person
+Pech Merle	l:l:other
+William Tricker	p:person
+UEFA Women's Cup 2003-04	m:event:sports
+The London Welbeck Hospital	o:hospital
+White-throated Oxylabes	c:life:animal
+Oldham Above Town	l:l:region
+EHC Biel	o:sport
+Route nationale (France)	c:concept
+Ephiny	p:fictional
+Daytime wetting	c:concept
+Newcastle Ravens	o:sport
+USS Yazoo (1865)	m:vessel
+Alexandre Alves	p:person
+Ancient Hebrew language	dab
+Jon Krosnick	p:person
+Dhulbahante	m:norp:nationality
+Shabanu	m:work:book
+Interrelated Demand and Supply	c:concept
+FC Germania 06 Schwanheim	o:sport
+Club Libertad	o:sport
+Auberry, California	l:l:region
+Applied behavior analysis	c:concept
+Induced metric	c:concept
+Kyra Schon	p:person
+Brahma Chellaney	p:person
+Joseph Renzulli	p:person
+Argentine PGA Championship	m:event:sports
+Dokkiri Doctor	m:work:other
+Secretariat of Public Education	o:government
+HIST1H2BG	c:substance:other
+Spallumcheen, British Columbia	l:g:other
+Ronald Venetiaan	p:person
+Bambous	l:g:town
+Tudor Vladimirescu (disambiguation)	dab
+La Beata de Piedrahita	p:person
+Aural & Hearty	m:product:album
+Cuetzalan, Puebla	l:g:town
+The Dam Short Film Festival	m:event:other
+List of space travelers by nationality	c:non-entity
+World Mixed Teams Championship	m:event:sports
+Craig O'Reilly	p:person
+Anne-Lise Bardet	p:person
+Major League Baseball on regional sports networks	c:non-entity
+Electrojet	c:concept
+Electoral division of Nelson (Tasmania)	l:g:other
+Tornadotus	l:l:river
+Kindaichi Case Files	m:work:other
+Millennium Galleries	o:museum
+Stone Creek Golf Club	o:other
+Kinabatangan River	l:l:river
+Bangladesh Military Academy	o:educational
+Marlin (disambiguation)	dab
+D-Q University	o:educational
+Ibi River	l:l:river
+George Hoadley (disambiguation)	dab
+Cinq-Mars-la-Pile	l:g:town
+Vyricherla Kishore Chandra Suryanarayana Deo	p:person
+Paul D. Stroop	p:person
+Opening Day Partners	o:corporation
+Gordon Getty	p:person
+James Thompson Bain	p:person
+Georges de Selve	p:person
+Kermen	l:g:town
+David Bennett (New Zealand)	p:person
+Col du Lein	l:l:other
+Dieselnoi Chor Thanasukarn	p:person
+Itzehoe	l:g:town
+1983 Montreal Expos season	c:non-entity
+Dionaea muscipula 'Bohemian Garnet'	c:life:plant
+Bathyscaphe Trieste II	m:vessel
+Karl Emanuel, Landgrave of Hesse-Rotenburg	p:person
+North Thompson Oxbows Manteau Provincial Park	l:l:other
+Bird Island (Massachusetts)	l:g:other
+Tiszacsermely	l:g:town
+Augustan poetry	c:concept
+Tseraskiy (crater)	l:l:other
+Institute of Technology, Sligo	o:educational
+Work Family	c:concept
+List of Malians	c:non-entity
+Arturo Frei	p:person
+Detroit Tigers managers and ownership	c:non-entity
+Homosynaptic	c:concept
+Rebecca Cardon	p:person
+Princeton Meadows, New Jersey	l:l:other
+Peter McDonald (tribal council chairman)	p:person
+Oplophorus-luciferin 2-monooxygenase	c:substance:chemical
+Counting	c:concept
+Luzer	o:band
+Fair Credit Reporting Act	m:law
+Nauru International Airport	f:airport
+Jeans instability	c:concept
+Liebert (company)	o:corporation
+Subramaniam v. Public Prosecutor	m:courtcase
+Hilperton	l:g:town
+Prince of Ligne	c:per
+Nellysford, Virginia	l:g:town
+Kitayama, Wakayama	l:g:town
+Aris Kalaizis	p:person
+Milly-Molly-Mandy	?
+G. W. Bryant	p:person
+SPA Truck Company	o:corporation
+Robert Gillmor	p:person
+Spiralothelphusa	c:life:animal
+Neutron star spin-up	c:concept
+Shmemis	f:building
+Kuolema Tekee Taiteilijan	m:work:song
+Recife Brazil Temple	f:building
+Vektor Grafix	o:corporation
+Fortnight	c:concept
+Nukesentinel	m:product:software
+Telmatobiinae	c:life:animal
+Association Footballers' Union	o:other
+Space Marines (Warhammer 40,000)	m
+Jeanette Lee (pocket billards)	p:person
+Lake Tomahawk, Wisconsin	l:g:town
+Lake Bramant	l:l:water
+Queensmen	dab
+Game balance	c:concept
+Nkwesi	l:g:town
+Nathan Blake	p:person
+Bordj El Bahri	l:l:other
+Wolfwil	l:g:other
+Gloria (Disillusion album)	m:product:album
+Toxandri	m:norp:nationality
+Tzu Chi	o:other
+Alpha	dab
+Jack Cassel	p:person
+Hidden City Games	o:corporation
+Suzanne Martel	p:person
+Red locust	c:life:animal
+Free Inquiry (magazine)	m:work:other
+Samuel Price	p:person
+Shanti Roney	p:person
+Why I Am Not a Christian	m:work:other
+Alone in My Room (Ami Suzuki song)	m:work:song
+Mountain Ridge High School (Frostburg, Maryland)	o:educational
+Augusta Zadow	p:person
+Wanstead tube station	f:other
+Saadat Noury	p:person
+Aame Katha	m:work:film
+Kalands Brethren	o:other
+Destiny (Gloria Estefan album)	m:product:album
+Academia Sinica	o:educational
+Studio Six Theater Company	o:corporation
+Drew Seeley	p:person
+Glen Wyllin Pleasure Grounds	f:other
+Hall effect thruster	c:concept
+Category of topological spaces	c:concept
+Keys of the Kingdom	m:product:album
+Irish McCalla	p:person
+Macrobenthos	c:life:other
+Francesco Benussi	p:person
+Son River	l:l:river
+Junk	d
+Andrei Iordan	p:person
+Ambrosden	l:g:town
+1939 in Wales	c:non-entity
+Whithorn Priory	f:building
+Ndogboyosoi War	m:event:war
+Cotillion (music)	o:other
+Angistri	l:g:other
+Claude Joseph Geoffroy	p:person
+Shuangsi, Taipei	l:g:town
+Fritz Schneider (ski jumper)	p:person
+Fragile	dab
+20th Century Records	o:corporation
+Crust (band)	o:band
+Sergio Contreras Pardo	p:person
+Flow	dab
+Remembrance of courage past	m:work:other
+ZIS-101	m:product:vehicle
+Yawan District	l:g:other
+Riverview High School	dab
+Dragon Warrior	m:product:software
+Midland Railway (disambiguation)	dab
+King George VI Coronation Medal	m:work:other
+Adel Flaifel	p:person
+Cardston (provincial electoral district)	l:g:other
+Ambatosia	l:g:town
+Bugs Bunny's Howl-Oween Special	m:work:other
+Sacro Monte di Ossuccio	f:other
+Jamal Sutton	p:person
+Flora MacKenzie	p:person
+The Calm Before the Storm	m:product:album
+Pocahontas (horse)	p:animal
+Mancheng County	l:g:other
+Eric Cantor	p:person
+Tridax procumbens	c:life:plant
+Ancient Diocese of Die	l:l:?
+Lord Charles Townshend (1769-1796)	p:person
+Back from Samoa	m:product:album
+Wall Doxey State Park	f:other
+Sungai Besi	l:g:town
+Lights Out (radio show)	m:work:other
+Reideen	m:work:other
+Censorship in the United Kingdom	c:concept
+USS LST-511	m:vessel
+Sorvilier	l:g:other
+Bene Ephraim	m:norp:nationality
+Mount Diablo Meridian	l:l:other
+Polkton Township, Michigan	l:g:town
+Akorem Laan	p:fictional
+Riches & More	m:product:album
+Wisconsin Lutheran Child & Family Service (WLCFS)	o:other
+Vulgar Display of Power	m:product:album
+Nakagawa Hidenari	p:person
+Glen Alpine, North Carolina	l:g:town
+Swimming Australia	o:other
+Singh sabha movement	c:concept
+Bower's White-toothed Rat	c:life:animal
+Leicestershire and Derbyshire Yeomanry	o:army
+Sean Rooks	p:person
+Robert Random	p:person
+Messila	l:g:other
+Nimbochromis linni	c:life:animal
+Double hull	c:concept
+List of SV Eintracht Trier 05 players	c:non-entity
+Optical wireless	c:concept
+Makuuchi	c:concept
+Third Position	c:concept
+Philip Sundel	p:person
+The Program (disambiguation)	dab
+Szukalice	l:g:town
+Photographs (Andrew Osenga album)	m:product:album
+Abraham de Revier, Sr.	p:person
+Visions of Cody	m:work:book
+Turkmenistan at the 2007 Asian Winter Games	c:non-entity
+Northiam	l:g:town
+Kass	dab
+Shaft angle	c:concept
+Dave Knudson	p:person
+St Hilary, Cornwall	l:g:town
+Francesco Capelli	p:person
+Quarashi (album)	m:product:album
+Old Hill Street Police Station	f:building
+9000 (number)	c:concept
+January 1999	num:date
+Diquat	c:substance:chemical
+Indo-Aryan civilizations	m:norp:nationality
+St. Louis County Road 90	f:road
+John Dudra	p:person
+East Elloe Motor Club	o:other
+Mastacembelus cunningtoni	c:life:animal
+Occasionalism	c:concept
+Chiribiquete Emerald	c:life:animal
+Madman theory	c:concept
+CNX Nifty Junior	m:?
+Corynebacterium granulosum	c:life:other
+Federschwert	c:concept
+Arcade emulator	c:concept
+University Music Society	dab
+HMS Invincible (1747)	m:vessel
+Venery	dab
+Georgetown University Medical Center	o:educational
+Impact Fertilisers	o:corporation
+Terri McGreggor	p:fictional
+Rehman Rashid	p:person
+Prince Edmund (Blackadder)	p:fictional
+Time and Again (TV series)	m:work:other
+South Taranaki District	l:g:other
+Christiania Rebels	o:sport
+Richard Hurndall	p:person
+Alexander Ramsey House	f:building
+Desadarium	o:band
+Waltham transmitting station	f:other
+History of the Republic of Macedonia	c:non-entity
+Al-Fitna Al-Kubra	m:work:book
+Art Bergmann	p:person
+Centre 200	f:building
+White Pine, Michigan	l:g:other
+Kilobaud Microcomputing	m:work:other
+M80 Stiletto	m:vessel
+Southern New England Telephone	o:corporation
+Orest Miller	p:person
+Unnatural act	c:concept
+Medieval Armenia	c:non-entity
+WJNX	o:corporation
+Ligia oceanica	c:life:animal
+Piglet (Winnie the Pooh)	p:fictional
+Unitas	dab
+Dudeney number	c:concept
+Lowes (disambiguation)	dab
+Surgery (disambiguation)	dab
+Cheyenne Mountain Entertainment	o:corporation
+Sint-Niklaas	l:g:town
+Boys & Girls (EP)	m:product:album
+Steffan Tubbs	p:person
+Karlsson-on-the-Roof	p:fictional
+Berezhanskyi Raion	l:l:region
+List of people who have disappeared	c:non-entity
+Denim	c:substance:other
+The 11th Hour (video game)	m:product:software
+Jack Longland	p:person
+Becky Jago	p:person
+Indianapolis International Airport	f:airport
+Leon Jenkins	p:person
+B-17, Queen of the Skies	m:product:other
+Registerware	c:concept
+Personal Best (Selena)	m:product:album
+Hempstead High (album)	m:product:album
+Hindawi Affair	m:event:other
+Avia BH-23	m:product:vehicle
+Catherine Tyldesley	p:person
+James Craig (Newcastle)	p:person
+Indian Hill, Ohio	l:g:town
+1993 FILA Wrestling World Championships	m:event:sports
+Saka language	m:language
+Saint Louis University School of Law	o:educational
+Brian Tutt	p:person
+The Affair of the Necklace (disambiguation)	dab
+Waarschoot	l:g:other
+Nick Navarro	p:person
+Monthyon	l:g:other
+Burj Al Arab	o:hotel
+Arthur Baker	dab
+Gmina Pcim	l:g:other
+Musical Starstreams	m:work:other
+Online transaction processing	c:concept
+Harold Whitlock	p:person
+Never Gonna Give You Up (disambiguation)	dab
+Almirida	o:hotel
+Puerto Quito	l:g:town
+Multimedia Fusion	m:product:software
+The Groundhog Day (The O.C. episode)	m:work:other
+Ham's	o:corporation
+Alessandro Viana da Silva	p:person
+Hobotalk	o:band
+The Jig	m:work:song
+Harald Haakonsson	p:person
+Insulin lispro	c:substance:chemical
+Alexander Bont	p:fictional
+Ireul	p:fictional
+Rob deLeeuw	p:person
+I Like to Riff	m:product:album
+DomainKeys Identified Mail	m:?
+Gulf Coast Yankees	o:sport
+Sageretia melliana	c:life:plant
+List of Espada in Bleach	c:non-entity
+KEMC	dab
+Suzanne Adams	p:person
+Australian Pratincole	c:life:animal
+On Thursday We Leave for Home	m:work:other
+Protoss	m:norp:nationality
+Shielded metal arc welding	c:concept
+Marc Benioff	p:person
+Islampur (Uttar Dinajpur)	l:g:town
+Idaho State Liquor Dispensary	o:government
+Scott Township, Ontario	l:g:town
+Gordon Wren	p:person
+Toszowice	l:g:town
+Balgreen	l:l:other
+Imadate, Imadate, Fukui	l:g:town
+Scouting in New Brunswick	c:non-entity
+When It's Love	m:work:song
+The Final Cut (TV serial)	m:work:other
+USS Fletcher	dab
+Eric Thomas (football player)	p:person
+Naukri.com	o:other
+Michael Williams (actor)	p:person
+Abitibi County, Quebec	l:g:other
+Trains in the Netherlands	c:non-entity
+Brasil Telecom	o:corporation
+Ren County	l:g:other
+Almaty Province	l:g:state
+Rumex	c:life:animal
+Thomas Jones (missionary)	p:person
+Japan National Route 40	f:road
+Corporate poverty	c:concept
+Mandy Stadtmiller	p:person
+Muhammad ibn Idris	p:person
+List of closed Sydney railway stations	c:non-entity
+Evermore (album)	m:product:album
+White Horde	l:g:state
+Parampara	c:concept
+John Inglis (footballer)	p:person
+Doug Padgett	p:person
+Anna Maxwell Martin	p:person
+Queen City Yacht Club (Seattle)	o:other
+997 Priska	l:l:space
+Anekal	l:g:other
+Minolta X-700	m:product:other
+Marvel Super Heroes (role-playing game)	m:product:software
+2004 French Open - Women's Doubles	c:non-entity
+Let's Face It!	m:work:play
+Bhimber	l:g:town
+The Bellero Shield	m:work:other
+Big Scary Animal	m:work:song
+Vay	m:product:software
+National Fire Danger Rating System	m:?
+Joseph Dines	p:person
+Bulverde	dab
+Emanem Records	o:corporation
+Pete Harris	p:person
+List of Galaxy Express 999 episodes	c:non-entity
+Architecture of Mac OS X	c:non-entity
+Fusker	c:non-entity
+Chris Sagramola	p:person
+Resignation from the British House of Commons	c:non-entity
+IEEE John von Neumann Medal	m:work:other
+Chief Minister of the State of Penang	c:per
+466th Fighter Squadron	o:army
+Secrets and Lies	dab
+Angus Reid	p:person
+Gypsy Grind	o:band
+Bartonellaceae	c:substance:?
+Ernest Louis, Grand Duke of Hesse	p:person
+Eugene Garfield	p:person
+Siel DK70	m:product:other
+European Safety and Reliability Association	o:other
+Blinded Horses	m:product:album
+Amphoe Sadao	l:g:town
+Loin (film)	m:work:film
+The Government Pension Fund of Norway	o:government
+Love, Inc.	dab
+Sikkim national football team	o:sport
+Needle time	c:concept
+Sinnamon Park, Queensland	l:g:other
+John Aloysius Maguire	p:person
+Walter Ellis	p:person
+Minnajima	dab
+Thomas Fleming (judge)	p:person
+G. E. Berrios	p:person
+Dimmitt Independent School District	l:g:other
+Saint-Affrique	l:g:other
+Abdul Razak Mohaideen	p:person
+Hikone Station	f:other
+Belchamp Otten	l:g:town
+Minority Report (Jay-Z song)	m:work:song
+Data Universal Numbering System	m:?
+Billie Holiday	p:person
+Nuria Juncosa	p:person
+Ab-32	m:law
+Articulate sign	c:concept
+Farrah Forke	p:person
+De Souza	dab
+Zhang Xiaoguan	p:person
+Lincoln Christ's Hospital School	o:educational
+California Coastal Records Project	m:work:?
+Lakehurst Mall	o:other
+Anchorage Island, New Zealand	l:l:other
+Alexander Sibiryakov	p:person
+Shrub-steppe	c:concept
+Ivana Baiul	p:fictional
+Faerie Stories	m:product:album
+Douglass Township, Michigan	l:g:town
+Microsoft Help	dab
+James Eli Watson	p:person
+Rogue in Space	m:work:book
+SLOSS Debate	m:?
+Mount Hawthorn, Western Australia	l:l:other
+Binary logarithm	c:concept
+1930 New York State Route renumbering	c:concept
+Heldenstein	l:g:other
+Committee on Jewish Law and Standards	o:other
+Cragus (Lycia)	l:g:town
+Network Ten	o:corporation
+Linda Thompson (actress)	p:person
+Bobby Bauer	p:person
+Monetary reform	c:concept
+Pennsylvania Senate, District 11	l:g:other
+Female Saikyo	m:event:sports
+Estrid Margarete Svendsdatter	p:person
+Benjamin Mays	p:person
+Andy Cairns	p:person
+Maureen Dunbar	p:person
+Harrow local elections	c:concept
+Trepanation (album)	m:product:album
+Daisuke Mori	p:person
+Dobry	m:work:book
+Richard Fussell	p:person
+Benjamin Ireson	p:person
+Yavneh Academy	o:educational
+Forques	l:g:town
+Digital media receiver	c:concept
+Debt on our Doorstep	o:other
+Off the Map	m:work:book
+USS Crowninshield (DD-134)	m:vessel
+Geroda, Thuringia	l:g:other
+Hydroxylammonium nitrate	c:substance:chemical
+The Scarlatti Inheritance	m:work:book
+Eleutherodactylus emleni	c:life:animal
+Shrikhande graph	c:concept
+Winchester measure	c:concept
+Prenatal development	c:concept
+West Virginia Route 4	f:road
+Wenas Creek Mammoth	c:life:animal
+Winchester 1200	m:product:weapon
+Kaedaase	p:fictional
+Badinan (region)	l:l:region
+Laura Bridgman	p:person
+Jozef Van Hove	p:person
+Abdominal wall	c:substance:other
+Hansel and Gretel: An Opera Fantasy	m:work:film
+Leslie Silva	p:person
+Berborite	c:substance:chemical
+Richard de Beauchamp, 13th Earl of Warwick	p:person
+Jammu Kashmir Liberation Front (Yasin Malik)	o:political
+Kisaburo Osawa	p:person
+Woodhey High School	o:educational
+English Boy	m:work:song
+Comprehensive Convention on International Terrorism	m:law
+Special school	c:concept
+Carmen Hill	p:person
+Carol Brooks MacNeil	p:person
+Benzyl acetate	c:substance:chemical
+Didacus Ximenes	p:person
+Peter Jay	p:person
+Diego Lamelas	p:person
+Theosophical Society in America	o:other
+IMac (Intel-based)	m:product:other
+Chalcogel	c:substance:chemical
+Breguet 270 Series	m:product:vehicle
+Neilly Gibson	p:person
+All-Winners Squad	o:sport
+Skogie Studios	o:corporation
+Hurricane Agnes	m:event:hurricane
+Raja Nazrin Shah	p:person
+Ghiasetdin of Kazan	p:person
+Kiul junction	l:g:town
+Blumfeld	o:band
+Heligoland-Zanzibar Treaty	m:law
+Dicranochaete	c:life:plant
+Foreign relations of Kiribati	c:non-entity
+Julien Havet	p:person
+Joe Don Looney	p:person
+Airborne (album)	m:product:album
+Bertogne	l:g:other
+Horses in art	c:non-entity
+Kiesen	l:g:other
+PBB	dab
+ExoSee	m:product:software
+Bukharan tenga	?
+Victor Bo	p:person
+Liliana Herrero	p:person
+Groezrock	m:event:other
+Thann, Haut-Rhin	l:g:other
+Regional Committee for Cycling in Martinique	o:other
+Yli	l:g:town
+Mahendra Lal Wadhwa	p:person
+Vimont (AMT)	f:other
+Costa Victoria	m:vessel
+Sula	dab
+Battle of Who Could Care Less	m:work:song
+Dresden (region)	l:g:other
+Brendan Jones	dab
+Finduilas of Dol Amroth	p:fictional
+Lloyd W. Newton	p:person
+Digitized Sky Survey	m:product:other
+ESignal	m:product:software
+3beta(or 20alpha)-hydroxysteroid dehydrogenase	c:substance:chemical
+Semyon Lavochkin	p:person
+Renningen	l:g:town
+Newhall Pass interchange	f:road
+Arakiel	p:fictional
+Sonnet 98	m:work:other
+Sturmey-Archer	o:corporation
+Wayne Jones	p:person
+Aorist	c:concept
+Seraband rug	c:substance:other
+Dihydroquinidine	c:substance:chemical
+Malkals	m:norp:nationality
+Tunggiya	m:norp:nationality
+Raymond Hatton	p:person
+Act of Uniformity	m:law
+Dom Pedro	dab
+Ravensdale Park	l:g:town
+Maria Carrillo High School	o:educational
+Gian Paolo Chiti	p:person
+List of TechTV Personalities	c:non-entity
+0-6-6-0	c:concept
+Daytona Beach Islanders	o:sport
+List of ecoregions in Yemen	c:non-entity
+Fight Back! with David Horowitz	m:work:other
+Turkey Youth Union	o:other
+Anthurium grex-avium	c:life:plant
+Protestant Church of Luxembourg	o:religious
+Rana Pierniamarilla	c:life:animal
+Wheelchair basketball	c:game
+Reyero	l:g:other
+The Fatal Warning	m:work:film
+Grammy Award for Best Country Song	m:work:other
+Chance!	m:work:song
+Secretary of State of New Jersey	c:per
+William Drummond of Logiealmond	p:person
+Human rights in Albania	c:non-entity
+Mustafa Qureshi	p:person
+Kusu Kusu	o:band
+Chris Green (football player)	p:person
+Liam Reddox	p:person
+Selan	p:person
+James Kimber	p:person
+Piscataquog River	l:l:river
+All of This - The "Live" Rarities	m:product:album
+SJS	dab
+White Cube	o:museum
+Nizhniy-Novgorod Radio Laboratory	o:other
+Spencer-Roloson Winery	o:corporation
+Star Mountains	l:l:other
+Draken	p:person
+Ki Ki, South Australia	l:g:town
+List of films directed by Mani Ratnam featuring A R Rahman	c:non-entity
+Donato Acciaioli	p:person
+Doodoo Wah	o:band
+Marcus Lloyd	p:person
+Maximus the Confessor	p:person
+Tom Coster	p:person
+Rajiv Menon	p:person
+Brian Reynolds Myers	p:person
+Port Waikato (NZ electorate)	l:l:region
+Resolution Island (Nunavut)	l:l:other
+Dennis Green	p:person
+Airstone	c:concept
+Niall McDarby	p:person
+Neuhaus an der Pegnitz	l:g:other
+Guy Vanderhaeghe	p:person
+Fidelity National Financial	o:corporation
+Francis Mallet	p:person
+Newham North West (UK Parliament constituency)	l:g:other
+Bellengreville	dab
+International rankings of Pakistan	c:non-entity
+Kuksa	c:concept
+Korea Post	o:government
+International Telegram	dab
+Fulton County, Georgia	l:g:other
+Milas Poli	m:work:song
+Robert Frost Middle School (Montgomery County, Maryland)	o:educational
+Politics in krav maga	c:non-entity
+Battle of Stony Lake	m:event:war
+Mick Frawley	p:person
+Edit conflict	c:concept
+The Gadsden Times	o:corporation
+Battle of Nineveh (627)	m:event:war
+Data logger	c:concept
+La Crosse, Virginia	l:g:town
+Prensa Latina	o:corporation
+Christopher Middleton (navigator)	p:person
+Caucasus mixed forests	l:l:other
+Core Sound	l:lake_sea_ocean
+Hope (Toshiko Akiyoshi album)	m:product:album
+Thermal energy	c:concept
+Notch Lake	l:lake_sea_ocean
+Dasyatis	c:life:animal
+Okot	dab
+Kleinfeld	dab
+Dirty Sanchez (sexual act)	c:concept
+Viqueque (district)	l:g:other
+Ching Chuan Kang Air Base	f:airport
+Little River (Delaware)	l:l:river
+Madhurey	m:work:film
+Murutinga do Sul	l:g:other
+Butterbur	c:life:plant
+Staffordshire Regiment	o:army
+Sparta, New York	l:g:town
+Suk Trio	o:band
+Wedding videography	c:concept
+Edward M. Beers	p:person
+Sherlock (software)	m:product:software
+The Kampong	o:?
+Marsiling MRT Station	f:other
+Dick Berggren	p:person
+Ivory-billed Aracari	c:life:animal
+Genome	c:concept
+Lion's Den (The Outer Limits)	m:work:other
+Walking	c:concept
+Robert Freeman Wexler	p:person
+Mine exploration	c:concept
+Dalston Kingsland railway station	f:other
+Dallas, South Dakota	l:g:town
+2004-05 ISL Basketball	m:event:?
+Jiffs	c:concept
+Helena Hillar Rosenqvist	p:person
+Bandarban Sadar Upazila	l:g:other
+Squamish, British Columbia	l:g:town
+John Garabedian	p:person
+Rhomboid muscle	c:concept
+Ovacome	o:other
+Schefflera beccariana	c:life:plant
+Criterion of multiple attestation	c:concept
+Lomar	l:l:region
+Japanese honorifics	c:concept
+David Barrett (American football)	p:person
+Dan R. MacDonald	p:person
+Justin Bonaventure Morard de Galles	p:person
+Cyrus and John	?
+Bare Ash	l:g:town
+1500s in music	c:non-entity
+Gorebridge	l:g:town
+Walter Reed (actor)	p:person
+Rahman Hallaci	p:person
+Jacques Foccart	p:person
+European Institute of Oncology	o:other
+Fourth Diet of Speyer	m:event:other
+Hermann Einstein	p:person
+Thanksgiving Tower	f:building
+Masked Apalis	c:life:animal
+Dudiyora Horaata	o:political
+Richard Dansky	p:person
+The Potbelleez	o:band
+Nanban trade	c:concept
+Zoobilee Zoo	m:work:other
+Priessnitz	dab
+UK railway stations - N	c:non-entity
+Grimoire Games	o:corporation
+Hoehne, Colorado	l:g:town
+Lewis County, Idaho	l:g:other
+Wagoner Armory	o:corporation
+Steven Bauer	p:person
+Fishing Creek (Susquehanna River)	l:l:river
+Hasan Gemici	p:person
+Strange Ways	o:corporation
+Gmina Rydzyna	l:g:other
+Thirthahalli	l:g:town
+Eisenbach	l:g:town
+List of Ranches and Stations	c:non-entity
+Hero Ba-Ban	p:fictional
+Rubab Raza	p:person
+Steve Palmer	p:person
+Judah ben Isaac Cardinal	p:person
+Thackerville, Oklahoma	l:g:town
+Satellite Award for Best Original Song	m:work:other
+Overachievement	c:concept
+Sudbury Wolves (disambiguation)	dab
+Crawford County, Indiana	l:g:other
+County Route 632 (Ocean County, New Jersey)	f:road
+1920 in sports	c:non-entity
+Missing in Action (film)	m:work:film
+Polish Resettlement Corps	o:government
+Pyruvic acid	c:substance:chemical
+John Horbury Hunt	p:person
+Jaadugar	m:work:film
+Congenic	c:concept
+MTV Video Music Award for Best Hip-Hop Video	m:work:other
+John Altoon	p:person
+Tia Neiva	p:person
+Tradition	c:concept
+Ysanne Churchman	p:person
+Michele Leggott	p:person
+The Mighty	m:work:film
+Vitali Berezovski	p:person
+Coosada, Alabama	l:g:town
+Vasant Ranjane	p:person
+Jimmy Shea	p:person
+Center for Independent Futures	o:other
+NEC (football club)	o:sport
+Ward (band)	o:band
+Greenrow	l:g:town
+Norwegian Wood (novel)	m:work:book
+Bullington	dab
+Faces of Death II	m:work:film
+Abdul Hakim Bukhary	p:person
+Weitersbach	l:g:other
+Administrative proceeding	c:concept
+Battle of the City of Legion	m:event:war
+Martens's Warbler	c:life:animal
+Hitoichiba Station	f:other
+1720s in Wales	c:non-entity
+Oregon Route 58	f:road
+John R. Hendricks	p:person
+Liriope (nymph)	p:fictional
+Allegations of mass graves at Chemmani	c:non-entity
+History of Ford Motor Company	c:non-entity
+Su-Chow	dab
+Babur	p:person
+Austrian National Union of Students	o:other
+Intrinsyc	o:corporation
+Horace A. Hildreth	p:person
+Dinosaur (Disney's Animal Kingdom)	m:product:other
+Ulf Andersson	p:person
+Beuerberg Abbey	f:building
+Gandini Lianos	p:animal
+Hindgut	c:substance:other
+Adsorption Method for Sampling of Dioxins and Furans	m:?
+Frank M. Gibson Trophy	m:work:other
+Huw Jenkins	p:person
+Travis Williams (basketball)	p:person
+Kaluwalhatian	l:l:?
+Association for the Rose in the Fist	o:political
+Townsend Church of England School	o:educational
+Yhden Enkelin Unelma	m:product:album
+Joseph W. White	p:person
+The Sixth Sense	m:work:film
+HMNZS Tutira (F420)	m:vessel
+White point	c:concept
+Hyphen War	m:event:other
+Gnuboy	m:product:software
+Guaifer of Benevento	p:person
+Justus Lipsius building	f:building
+Ascot Park, South Australia	l:l:other
+Mautodontha ceuthma	c:life:animal
+Samoan Fantail	c:life:animal
+Prescott Townsend	p:person
+2001 European Grand Prix	m:event:sports
+OMV (disambiguation)	dab
+Skin Yard	o:band
+Kellie Pickler	p:person
+Hawarden, Saskatchewan	l:g:town
+Jackpot Rewards	o:corporation
+Ira Ishida	p:person
+Disney's Beach Club Resort	o:hotel
+Arthur Hyman	p:person
+Corbreuse	l:g:town
+Burnage	l:l:other
+Branched surface	c:concept
+Activin type 2 receptors	c:substance:other
+Company of Guinea	o:government
+Swarovski	m:product:other
+1982 U.S. Open - Men's Singles	m:event:sports
+Latin Grammy Awards of 2002	m:event:other
+Elections in Belgium	c:non-entity
+Vasiliki, Trikala	l:g:other
+The Hacker	p:person
+Sympiesometer	c:product:other
+Dead Things	m:work:other
+Hirtshalsbanen	f:road
+La Historia	m:product:album
+Ephraim Douglass Adams	p:person
+Demai	m:work:book
+USS Denver (LPD-9)	m:vessel
+Integer notation	c:concept
+Herman Ekeberg	p:person
+Nona (short story)	m:work:other
+Diana Dill	p:person
+Denis Healey	p:person
+Austin 12 hp	m:product:vehicle
+Lindsay Tuckett	p:person
+VGOC	o:other
+Sauchiehall Street	f:road
+Rosie (album)	m:product:album
+Thomas McCarthy (politician)	p:person
+List of places named after Josip Broz Tito	c:non-entity
+Kyle Clancy	p:person
+Arjona	l:g:town
+401(k)	m:law
+Beryllium bromide	c:substance:chemical
+Vympel K-13	m:product:weapon
+Renwick	dab
+Flag of Guadalajara	c:concept
+Athletics at the 2004 Summer Olympics - Women's long jump	m:event:sports
+Software Preservation Society	o:other
+Research Institute for the Languages of Finland	o:other
+The New Adventures of Beany and Cecil	m:work:other
+Postage stamps and postal history of Kyrgyzstan	c:non-entity
+Jud Simons	p:person
+Contour bunding	c:concept
+Bolton-on-Swale	l:g:town
+Hoary bat	c:life:animal
+Lent Bumps 2007	m:event:sports
+Maria Arredondo (Second Version)	m:product:album
+Tokyo Market Wrap	m:work:other
+Bernhard Preim	p:person
+Independent station	c:concept
+C-sis internal ribosome entry site (IRES)	c:substance:?
+List of hotels in Burma	c:non-entity
+Lal Bahadur Shastri Stadium	f:building
+Walisona Goro	l:l:region
+BitTorrent (protocol)	m:?
+USS Samuel B. Roberts	dab
+Jon Haraldsson	p:person
+William M. Donnelly	p:person
+Armando Favazza	p:person
+Actuary	c:concept
+Brampton Library	o:other
+EMD GP40-2	m:product:vehicle
+Aelgifu	dab
+DECHEMA model	c:concept
+Perot de Garbalei	p:person
+Margaret Widdemer	p:person
+Yamanokuchi, Miyazaki	l:g:town
+Metal Arms: Glitch in the System	m:product:software
+Jeffrey Richter	p:person
+Ampelakia (disambiguation)	dab
+Aaron Lee	p:person
+Eric Nagler	p:person
+Oliver Sundberg	p:person
+Dynamene	p:fictional
+Arlington High School (Arlington, Ohio)	o:educational
+Al-Maarij	m:work:other
+Ruthergate	f:road
+Minitran	m:product:other
+Mr. Do series	m:work:other
+John Alexander	dab
+Anonymous Bodies in an Empty Room	m:product:album
+Pacific-North American teleconnection pattern	c:concept
+Appius Claudius Pulcher (consul 185 BC)	p:person
+Complete mixing	c:concept
+De Lijn	o:government
+John McCutchan	p:person
+International Affiliation of Writers Guilds	o:other
+Emperor Go-Daigo	p:person
+Blue Savannah	m:work:song
+Winter X Games XII	m:event:sports
+John Sassamon	p:person
+Wang De-lu	p:person
+Castelnuovo-de Franchis theorem	c:concept
+Rusty-breasted Wren-babbler	c:life:animal
+Ansar (Islam)	c:concept
+Frances Hughes Glendening	p:person
+Coatbridge and Chryston	dab
+2007 NCAA Division I FBS football season	m:event:sports
+Fat Albert (film)	m:work:film
+William F. Durand	p:person
+V354 Cephei	l:l:space
+Tamil-Kodagu languages	c:concept
+List of University of Washington student organizations	c:non-entity
+Three Colors: Red	m:work:film
+Eliyathamby Ratnasabapathy	p:person
+Nez Perce National Historic Trail	l:l:other
+Goodbye (Tevin Campbell song)	m:work:song
+St. Patrick's College of Education (Drumcondra)	o:educational
+Andrew Combe	p:person
+Leptobrachium smithi	c:life:animal
+Ester Wier	p:person
+Roller hockey at the 1992 Summer Olympics - Squads and statistics	c:non-entity
+Coping with the Urban Coyote	m:product:album
+Ammerthal	l:g:other
+Savage House	f:building
+Yangzhou University	o:educational
+Jinamitra	p:person
+Ppc Racing	o:sport
+W Holding Company	o:corporation
+Provincial Highway No. 68 (Taiwan)	f:road
+Alexander Macmillan (publisher)	p:person
+Androgeos	p:fictional
+Cape Breton South (federal electoral district)	l:g:other
+Secaucus (album)	m:product:album
+Tonga people of Zambia and Zimbabwe	m:norp:nationality
+Prince Rostislav of Russia	p:person
+Marc L. Marks	p:person
+France Culture	o:corporation
+Modigliani (film)	m:work:film
+Bob Chance	p:person
+Business impact analysis	c:concept
+National Savings and Investments	o:corporation
+Charlie Palmer	dab
+Bodies Under Siege	m:work:book
+Brian Doherty	dab
+Baron Airedale	c:per
+Hot Wheels: Beat That!	m:product:software
+Hard Knock Life (Ghetto Anthem)	m:work:song
+John Jackson (Somerset cricketer)	p:person
+Ensemble Gombert	o:band
+Home & Garden Television	m:?
+PBA Women's Series	m:event:sports
+Happy Days, Sweetheart	m:product:album
+L. J. Hooker	o:corporation
+1999 Italian Grand Prix	m:event:sports
+Liam Lawlor	p:person
+Elliott Dexter	p:person
+Members of the Australian House of Representatives, 1969-1972	c:non-entity
+Department of Soldiers' Civil Re-establishment	o:government
+White Cargo	m:work:film
+Shanti Committee	o:government
+Mannich base	c:concept
+Augustus Long	p:person
+Council of Ambassadors (disambiguation)	dab
+Toccata for Toy Trains	m:work:film
+Ex-convict school teachers in Western Australia	c:non-entity
+Video referee	c:concept
+San Rocco al Porto	l:g:town
+North Fremantle railway station, Perth	f:other
+Three Monks	m:work:film
+Southport Lord Street railway station	f:other
+American Convention on Human Rights	m:law
+Chiron Corporation	o:corporation
+Salvage Squad	m:work:other
+Patricio Galaz	p:person
+Sciotropis lattkei	c:life:animal
+1916 in Wales	c:non-entity
+Wellington Luis de Sousa	p:person
+Panzer Command	m:product:software
+Brent oilfield	f:other
+Paul Bernard (footballer)	p:person
+Hostile work environment	c:concept
+Gehyra	c:life:animal
+Widodo Adi Sutjipto	p:person
+Reina de Corazones (Alejandra Guzman album)	m:product:album
+Frederick H. Billings	p:person
+Batavia Township	dab
+Takash	p:person
+Hay Township, Michigan	l:g:town
+Elmo Saves Christmas	m:work:other
+Gerry Fiennes	p:person
+Pierrefort	l:g:other
+Meary James Thurairajah Tambimuttu	p:person
+List of United States Supreme Court cases, volume 384	c:non-entity
+John Gilbert (actor)	p:person
+Babulal Gaur	p:person
+Facing New York	o:band
+Mantiel	l:g:other
+Jean Varin	p:person
+Ulysses, Pennsylvania	l:g:other
+Tony Ward (Australian actor)	p:person
+Central General de Trabajadores	dab
+Astrid Bin	p:person
+Muppet Mobile Lab	m:product:other
+Meeniyan railway station, Victoria	f:other
+Lloyd International Airways	o:corporation
+Jongsong Peak	l:l:other
+Mu Tauri	l:l:space
+John Hampden (disambiguation)	dab
+Liberian Premier League	?
+Zeihen	l:g:other
+Sherbrooke, Nova Scotia	l:g:other
+Benedict Kine	p:fictional
+The Punisher: Purgatory	m:work:other
+Zorritos	l:g:town
+Marcin Wadowita	p:person

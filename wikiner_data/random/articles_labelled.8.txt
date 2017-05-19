@@ -1,0 +1,110 @@
+Ascot Park, South Australia	l:l:other
+Mautodontha ceuthma	c:life:animal
+Samoan Fantail	c:life:animal
+Prescott Townsend	p:person
+2001 European Grand Prix	m:event:sports
+OMV (disambiguation)	dab
+Skin Yard	o:band
+Kellie Pickler	p:person
+Hawarden, Saskatchewan	l:g:town
+Jackpot Rewards	o:corporation
+Ira Ishida	p:person
+Disney's Beach Club Resort	o:hotel
+Arthur Hyman	p:person
+Corbreuse	l:g:town
+Burnage	l:l:other
+Branched surface	c:concept
+Activin type 2 receptors	c:substance:other
+Company of Guinea	o:government
+Swarovski	m:product:other
+1982 U.S. Open - Men's Singles	m:event:sports
+Latin Grammy Awards of 2002	m:event:other
+Elections in Belgium	c:non-entity
+Vasiliki, Trikala	l:g:other
+The Hacker	p:person
+Sympiesometer	c:product:other
+Dead Things	m:work:other
+Hirtshalsbanen	f:road
+La Historia	m:product:album
+Ephraim Douglass Adams	p:person
+Demai	m:work:book
+USS Denver (LPD-9)	m:vessel
+Integer notation	c:concept
+Herman Ekeberg	p:person
+Nona (short story)	m:work:other
+Diana Dill	p:person
+Denis Healey	p:person
+Austin 12 hp	m:product:vehicle
+Lindsay Tuckett	p:person
+VGOC	o:other
+Sauchiehall Street	f:road
+Rosie (album)	m:product:album
+Thomas McCarthy (politician)	p:person
+List of places named after Josip Broz Tito	c:non-entity
+Kyle Clancy	p:person
+Arjona	l:g:town
+401(k)	m:law
+Beryllium bromide	c:substance:chemical
+Vympel K-13	m:product:weapon
+Renwick	dab
+Flag of Guadalajara	c:concept
+Athletics at the 2004 Summer Olympics - Women's long jump	m:event:sports
+Software Preservation Society	o:other
+Research Institute for the Languages of Finland	o:other
+The New Adventures of Beany and Cecil	m:work:other
+Postage stamps and postal history of Kyrgyzstan	c:non-entity
+Jud Simons	p:person
+Contour bunding	c:concept
+Bolton-on-Swale	l:g:town
+Hoary bat	c:life:animal
+Lent Bumps 2007	m:event:sports
+Maria Arredondo (Second Version)	m:product:album
+Tokyo Market Wrap	m:work:other
+Bernhard Preim	p:person
+Independent station	c:concept
+C-sis internal ribosome entry site (IRES)	c:substance:?
+List of hotels in Burma	c:non-entity
+Lal Bahadur Shastri Stadium	f:building
+Walisona Goro	l:l:region
+BitTorrent (protocol)	m:?
+USS Samuel B. Roberts	dab
+Jon Haraldsson	p:person
+William M. Donnelly	p:person
+Armando Favazza	p:person
+Actuary	c:concept
+Brampton Library	o:other
+EMD GP40-2	m:product:vehicle
+Aelgifu	dab
+DECHEMA model	c:concept
+Perot de Garbalei	p:person
+Margaret Widdemer	p:person
+Yamanokuchi, Miyazaki	l:g:town
+Metal Arms: Glitch in the System	m:product:software
+Jeffrey Richter	p:person
+Ampelakia (disambiguation)	dab
+Aaron Lee	p:person
+Eric Nagler	p:person
+Oliver Sundberg	p:person
+Dynamene	p:fictional
+Arlington High School (Arlington, Ohio)	o:educational
+Al-Maarij	m:work:other
+Ruthergate	f:road
+Minitran	m:product:other
+Mr. Do series	m:work:other
+John Alexander	dab
+Anonymous Bodies in an Empty Room	m:product:album
+Pacific-North American teleconnection pattern	c:concept
+Appius Claudius Pulcher (consul 185 BC)	p:person
+Complete mixing	c:concept
+De Lijn	o:government
+John McCutchan	p:person
+International Affiliation of Writers Guilds	o:other
+Emperor Go-Daigo	p:person
+Blue Savannah	m:work:song
+Winter X Games XII	m:event:sports
+John Sassamon	p:person
+Wang De-lu	p:person
+Castelnuovo-de Franchis theorem	c:concept
+Rusty-breasted Wren-babbler	c:life:animal
+Ansar (Islam)	c:concept
+Frances Hughes Glendening	p:person
