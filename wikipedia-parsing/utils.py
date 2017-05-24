@@ -37,3 +37,12 @@ def get_current_time_in_miliseconds():
     http://stackoverflow.com/questions/5998245/get-current-time-in-milliseconds-in-python
     '''
     return(get_current_time_in_seconds() + '-' + str(datetime.datetime.now().microsecond))
+
+def get_ner_class(link, table):
+    try:
+        return table[link]
+    except:
+        try:
+            return table[link.ccapitalize()]
+        except:
+            return None

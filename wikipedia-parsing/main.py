@@ -14,7 +14,6 @@ from utils import *
 wiki_iterator = Wikipedia_iterator()
 pages_manager = Pages_manager()
 page = True
-parser = English()
 #wikipedia_to_wikidata = load_pickle("/dlabdata1/braemy/wikipedia_classification/wikipedia_to_wikidata.p")
 #wikidata_to_ner = load_pickle("/dlabdata1/braemy/wikidata-classification/mapping_wikidata_to_NER.p")
 #wikiTitle_to_id = load_pickle("/dlabdata1/braemy/wikipedia_classification/title_to_id_170.p")
@@ -27,7 +26,9 @@ while page is not None:
         page =wiki_iterator.next_page()
         if page.is_redirect():
             continue
-        page.parse(parser,wp_to_ner_by_title=wp_to_ner_by_title)
+        if page.title != "Algeria":
+            continue
+        page.parse(wp_to_ner_by_title=wp_to_ner_by_title)
         pages_manager.add_page(page)
     except StopIteration:
         pages_manager.save_all()
