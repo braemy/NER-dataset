@@ -44,7 +44,7 @@ class Wikidata_classification(object):
         per = ['Q215627']  # ['person']
         org = ['Q43229']  # ['organization']
         loc = ['Q3257686', 'Q17334923']  # ['locality', 'location']
-        misc = ['Q1656682', 'Q315', 'Q231002']  # ['event', 'language', 'nationality']
+        misc = ['Q1656682', 'Q315', 'Q231002', 'Q1190554']  # ['event', 'language', 'nationality', 'event]
         self.build_mapping(per, self.parameter_wd['PER'], graph, id_to_vertex)
         self.build_mapping(loc, self.parameter_wd['LOC'], graph, id_to_vertex)
         self.build_mapping(org, self.parameter_wd['ORG'], graph, id_to_vertex)
@@ -64,13 +64,23 @@ class Wikidata_classification(object):
             for o in v_iterator:
                 l.add(vertex_properties[o.source()][0])
                 l.add(vertex_properties[o.target()][0])
-            with open(file_path, "wb") as file:
-                pickle.dump(l, file)
-            print(len(l), "elements in", file_path)
+        with open(file_path, "wb") as file:
+            pickle.dump(l, file)
+        print(len(l), "elements in", file_path)
         return l
 
     def get_wikidata_by_class(self, list_of_id, name):
-        self.build_mapping(list_of_id, name)
+        file_path = os.path.join("/dlabdata1/braemy/wikidata-classification/", name +".p")
+        #self.build_mapping(list_of_id, file_path)
+
+        self.load_instance()
+        wd_id_of_subclasses = load_pickle(file_path)
+        wd_set_output = set()
+        for id_, instances in tqdm(self.id_to_instance.items()):
+            for instance in instances:
+                if instance in wd_id_of_subclasses:
+                    wd_set_output.add(id_)
+        convert_wd_id_to_wp_title(wd_set_output, "/dlabdata1/braemy/wikipedia_classification/wp_by_title_" + name + ".p")
 
     def classify_article(self):
         self.load_instance()
@@ -83,5 +93,6 @@ class Wikidata_classification(object):
 
         pickle_file(self.parameter_wd['wd_to_NER'], id_to_nerClass)
 
+        convert_wp_to_(self.parameter_wd['wd_to_NER'], "/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
         print("Ratio of pages in more than 1 categories:",
               round(float(ner_mapping.fuck_counter) / (len(id_to_nerClass)), 10) * 100, "%")

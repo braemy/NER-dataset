@@ -13,6 +13,10 @@ if __name__ == '__main__':
     #subclass_graph_builder.build_mapping_to_NER_class()
 
 
+    print("Wikidata classification")
     wd_classification = Wikidata_classification()
     #wd_classification.build_mapping_to_NER_class()
-    wd_classification.classify_article()
+    #wd_classification.classify_article()
+
+    id_list = ['Q31629', 'Q4438121'] #type of sport, sport organization
+    wd_classification.get_wikidata_by_class(id_list, name="Sport")
