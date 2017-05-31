@@ -29,7 +29,7 @@ if __name__ == '__main__':
     if __name__ == '__main__':
         parser = argparse.ArgumentParser()
         parser.add_argument('--id', type=int, help='file id to process')
-        parser.add_argument('--subpart', type=str, help='parse only subpart', default=None)
+        parser.add_argument('--subpart', type=str, help='parse only subpart', default=None, required=False)
 
         args = parser.parse_args()
         main(args.id, args.subpart)

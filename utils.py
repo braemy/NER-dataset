@@ -5,6 +5,7 @@ import time
 
 import datetime
 
+import json
 import yaml
 from tqdm import tqdm
 
@@ -56,34 +57,38 @@ def load_parameters(name=None):
         else:
             return yaml.load(ymlfile)
 
+def json_load(file_path):
+    with open(file_path, "r") as file:
+        return json.load(file)
 
 def convert_wp_to_(destination_path, output_path):
     wikipedia_to_wikidata = load_pickle("/dlabdata1/braemy/wikipedia_classification/wikipedia_to_wikidata.p")
-    wikiTitle_to_id = load_pickle("/dlabdata1/braemy/wikipedia_classification/title_to_id_170.p")
+    wikiTitle_to_id = json_load("/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json")
 
     # wikidata_to_ner = load_pickle("/dlabdata1/braemy/wikidata-classification/mapping_wikidata_to_NER.p")
     wikidata_to_ner = load_pickle(destination_path)
     wp_to_ner_by_title = dict()
-    for k_title, v_id in tqdm(wikiTitle_to_id.items()):
+    for k_title, infos in tqdm(wikiTitle_to_id.items()):
+        print(k_title, infos)
         try:
-            wp_to_ner_by_title[k_title] = wikidata_to_ner[wikipedia_to_wikidata[v_id]]
+            wp_to_ner_by_title[k_title] = {'ner':wikidata_to_ner[wikipedia_to_wikidata[infos]], 'lc': infos['lc']}
         except:
             continue
 
-    print(len(wp_to_ner_by_title))
+    print("Number of entities:", len(wp_to_ner_by_title))
     # pickle_data(wp_to_ner_by_title, "/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
     pickle_file(output_path,wp_to_ner_by_title )
 
 def convert_wd_id_to_wp_title(wikidata_set, output_path):
     wikipedia_to_wikidata = load_pickle("/dlabdata1/braemy/wikipedia_classification/wikipedia_to_wikidata.p")
-    wikiTitle_to_id = load_pickle("/dlabdata1/braemy/wikipedia_classification/title_to_id_170.p")
+    wikiTitle_to_id = json_load("/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json")
 
     wikidata_set_title = set()
-    for k_title, v_id in tqdm(wikiTitle_to_id.items()):
+    for k_title, infos in tqdm(wikiTitle_to_id.items()):
         try:
-            if wikipedia_to_wikidata[v_id] in wikidata_set:
+            if wikipedia_to_wikidata[infos['id']] in wikidata_set:
                 wikidata_set_title.add(k_title)
         except:
             continue
-    print(len(wikidata_set_title))
+    print("Number of entities:",len(wikidata_set_title))
     pickle_file(output_path, wikidata_set_title)

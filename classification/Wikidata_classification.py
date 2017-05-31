@@ -9,12 +9,11 @@ from utils import *
 
 
 class Wikidata_classification(object):
-    def __init__(self):
+    def  __init__(self):
         self.parameter_wd = load_parameters('wikidata')
         self.parameter_gr = load_parameters()
         self.folder = self.parameter_wd['output_dir']
         self.id_to_instance = dict()
-        self.load_id_to_title()
 
 
 
@@ -34,6 +33,8 @@ class Wikidata_classification(object):
             print('Size (in bytes):', sys.getsizeof(self.id_to_title), 'Number of elem:', len(self.id_to_title), end="\r")
 
     def build_mapping_to_NER_class(self):
+        self.load_id_to_title()
+
         id_to_vertex = load_pickle(self.parameter_gr['graph_id_to_vertex'])
 
         print("Loading graph...", end="\r")
@@ -69,7 +70,7 @@ class Wikidata_classification(object):
         print(len(l), "elements in", file_path)
         return l
 
-    def get_wikidata_by_class(self, list_of_id, name):
+    def get_subset_of_wikidata(self, list_of_id, name):
         file_path = os.path.join("/dlabdata1/braemy/wikidata-classification/", name +".p")
         #self.build_mapping(list_of_id, file_path)
 

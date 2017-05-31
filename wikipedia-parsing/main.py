@@ -6,7 +6,6 @@ Created by e-bug on 07/03/17.
 import lxml.etree as ET
 import sys
 
-from spacy.en import English
 
 from pages_manager import Pages_manager
 from wikipedia_iterator import Wikipedia_iterator
@@ -26,7 +25,9 @@ while page is not None:
         page =wiki_iterator.next_page()
         if page.is_redirect():
             continue
-        if page.title != "Algeria":
+        if page.id is not None and int(page.id) %10000 == 0:
+            print(page.id)
+        if page.id != '12783':
             continue
         page.parse(wp_to_ner_by_title=wp_to_ner_by_title)
         pages_manager.add_page(page)

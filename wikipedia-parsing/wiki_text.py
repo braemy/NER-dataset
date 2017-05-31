@@ -1,12 +1,11 @@
 import sys
 
 import os
-import re
 import regex
 
-from pyspark.sql import *
-from pyspark.sql.functions import *
-from pyspark.sql.types import *
+#from pyspark.sql import *
+#from pyspark.sql.functions import *
+#from pyspark.sql.types import *
 from utils import *
 #from spacy.en import English
 
@@ -36,12 +35,16 @@ class Wiki_text(object):
         return "#REDIRECT" in self.text
 
     def parse(self,wp_to_ner_by_title):
+        print(self.text)
         regex_list = self._get_regex()
-        self.text = regex.sub(regex_list, "", self.text)
+        self.text = regex.sub(regex_list, "", self.text, flags=regex.MULTILINE)
         self._replace_wikt() # TODO yes or no?
-        output = self._map_link(self.text)
-        output = self._map_title(output)
-        self.parsed_text, _ = self._parse(output,wp_to_ner_by_title=wp_to_ner_by_title)
+        subpart = self._map_title(self.text)
+        subpart = self._map_link(subpart)
+        subpart = self._title_inference(subpart)
+        print(subpart)
+        sys.exit()
+        self.parsed_text, _ = self._parse(subpart,wp_to_ner_by_title=wp_to_ner_by_title)
 
 
     def parse_spark(self, wp_to_ner_by_title=None):
@@ -56,7 +59,7 @@ class Wiki_text(object):
 
     def clean(self):
         regex_list = self._get_regex()
-        self.text = regex.sub(regex_list, "", self.text)
+        self.text = regex.sub(regex_list, "", self.text, flags=regex.MULTILINE)
         self._replace_wikt()  # TODO yes or no?
         return Row(title=self.title, text = self.text)
 
@@ -65,11 +68,12 @@ class Wiki_text(object):
             for tuple in sentence:
                 print(tuple)
             print("\n")
+
     def _get_regex(self):
         ref_regex = r"<ref[^\/]*?>[\S\s]*?<\/ref>|<ref[\S\s]*?\/>"
         braces_regex = r"\{\{([^\{\}]|(?R))*\}\}"
         comment_regex = r"<!--[\S\s]*?-->"
-        list_regex = r"\*+.*?\n"
+        list_regex = r"^(\*|:|;)+.*?\n"
         section_regex = r"=+.*?=+"
         categories_regex = r"\[\[:*Category:.*?\]\]"
         math_regex = r"<math[^\/]*?>[\S\s]*?<\/math>"
@@ -77,15 +81,21 @@ class Wiki_text(object):
         table_regex = r"\{\|[\S\s]*?(\{\|[\S\s]*?\|\}[\S\s]*?)*?\|\}"
         sub_regex = r"<sub[^\/]*?>[\S\s]*?<\/sub>"
         sup_regex = r"<sup[^\/]*?>[\S\s]*?<\/sup>"
-        image_regex = R"\[\[(Image|File):[\S\s]*?(\[\[[\S\s]*?\]\][\S\s]*?)*?\]\]"         # TODO keep caption
+        image_regex = r"\[\[(Image|File):[\S\s]*?(\[\[[\S\s]*?\]\][\S\s]*?)*?\]\]"         # TODO keep caption
+        small_regex = r"<small[^\/]*?>[\S\s]*?<\/small>"
+        big_regex = r"<big[^\/]*?>[\S\s]*?<\/big>"
+        div_regex = r"<div[^\/]*?>[\S\s]*?<\/div>"
+        empty_parenthesis = r"\(\)"
+        gallery = r"<gallery[^\/]*?>[\S\s]*?<\/gallery>"
 
 
         return '|'.join([ref_regex,comment_regex,list_regex, section_regex, categories_regex, braces_regex,
-                         math_regex,table_regex,sub_regex,image_regex,sup_regex,blockquote_regex])
+                         math_regex,table_regex,sub_regex,image_regex,sup_regex,blockquote_regex, small_regex,
+                         div_regex,empty_parenthesis,gallery,big_regex])
 
     def _replace_wikt(self):
-        regex = r"\[\[wikt:([\S\s]*?)\|([\S\s]*?)\]\]"
-        result = re.finditer(regex, self.text)
+        reg = r"\[\[wikt:([\S\s]*?)\|([\S\s]*?)\]\]"
+        result = regex.finditer(reg, self.text)
         output = self.text
         for r in result:
             output = output.replace(self.text[r.start():r.end()], r.group(2), 1)
@@ -94,8 +104,8 @@ class Wiki_text(object):
 
 
     def _map_link(self, text):
-        regex = r"\[\[([\S\s]*?)(\|([\S\s]*?))?\]\]"
-        result = re.finditer(regex, text)
+        reg = r"\[\[([\S\s]*?)(\|([\S\s]*?))?\]\]"
+        result = regex.finditer(reg, text)
         output = text
 
         for r in result:
@@ -114,9 +124,9 @@ class Wiki_text(object):
 
 
     def _map_title(self, text):
-        regex = r"\'\'\'([\S\s]*?)\'\'\'"
-        regex = re.compile(regex)
-        result = regex.finditer(text)
+        reg = r"\'\'\'([\S\s]*?)\'\'\'"
+        reg = regex.compile(reg)
+        result = reg.finditer(text, endpos=1500)
         output = text
         self.title_list = []
         for r in result:
@@ -130,16 +140,18 @@ class Wiki_text(object):
         return output
 
     def _title_inference(self,text):
+
         for title in self.title_list:
-            self._title_inference(output, r.group(1))
-            result = re.finditer(title, text)
+            reg = regex.compile(regex.escape(title))
+            result = reg.finditer(text)
             output = text
             previous_index = 0
             for r in result:
                 start = output.find(text[r.start():r.end()], previous_index)
                 previous_index = start + 1
-                self.indexes_to_link[start] = ((start, start + len(title)),title)
-
+                if start not in self.indexes_to_link:
+                    self.indexes_to_link[start] = ((start, start + len(title)),title)
+        return text
 
     def _parse(self,text, wp_to_ner_by_title=None, wikipedia_to_wikidata = None, wikidata_to_ner=None, wikiTitle_to_id=None):
         #command = "../apache-opennlp-1.7.2/bin/opennlp SentenceDetector models/en-sent.bin < 'Hello my name is John. I live in switzerland.'"
@@ -171,8 +183,9 @@ class Wiki_text(object):
              number_of_ner_class = 0
              sequence = []
              sentence_str = ""
+             at_least_one_entity = False
              for token in tokens:
-                 if re.match(r"\s+", token):
+                 if regex.match(r"\s+", token):
                      continue
                  token_idx = text.find(token, start_idx_looking)
                  start_idx_looking = token_idx + 1
@@ -188,21 +201,29 @@ class Wiki_text(object):
                      try:
                          ((start, end), link) = self.indexes_to_link[token_idx]
                          ner_class = get_ner_class(link, wp_to_ner_by_title)
-                         if ner_class:
+                         if not token.lower() and ner_class:
+                             at_least_one_entity = True
                              sequence.append((token, link, "B-" + ner_class))
                              sentence_str += token  +" X "+ "B-"+ner_class +" " +link+ " \n"
                              number_of_ner_class += 1
                          else:
+                             if token[0].isupper():
+                                 at_least_one_entity = False
+                                 continue
                              ner_class = "O"
                              sequence.append((token, link, ner_class))
                              sentence_str += token +" X " + ner_class +" " +link+ " \n"
 
                      except:
+                         if token[0].isupper():
+                             at_least_one_entity = False
+                             continue
                          ner_class = "O"
                          sequence.append((token, None, ner_class))
                          sentence_str += token + " X " + ner_class +" None \n"
 
-             if float(number_of_ner_class)/float(len(tokens)) > 0.3 :
+             #if float(number_of_ner_class)/float(len(tokens)) > 0 :
+             if at_least_one_entity:
                  output.append(sequence)
                  sequence_list_str += sentence_str +  " \n"
 
