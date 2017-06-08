@@ -60,7 +60,7 @@ class Subclass_graph_builder(object):
         g.vertex_properties['name'] = v_name
         g.vertex_properties['properties'] = v_properties
         g.save(self.parameters['graph'])
-        pickle_file(self.parameters['graph_id_to_vertex'], id_to_v)
+        pickle_data(id_to_v, self.parameters['graph_id_to_vertex'])
         return g, v_name, v_properties, id_to_v
 
 

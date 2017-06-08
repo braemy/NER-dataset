@@ -2,8 +2,8 @@ import glob
 
 import json
 
-input_file = "/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId/part*"
-output_file = "/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json"
+input_file = "/dlabdata1/braemy/wikipedia_classification/alternative_titles/part*"
+output_file = "/dlabdata1/braemy/wikipedia_classification/alternative_titles.json"
 data = {}
 for file in glob.glob(input_file):
 
@@ -11,7 +11,7 @@ for file in glob.glob(input_file):
 
         for line in file:
             line = json.loads(line)
-            data[line['title']] = {'id': line['id'], 'lc':line['lc']}
+            data[line['alternative']] = line['true']
 
 with open(output_file, "w", encoding="utf-8") as file:
     json.dump(data, file)

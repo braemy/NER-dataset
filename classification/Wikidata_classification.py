@@ -18,14 +18,14 @@ class Wikidata_classification(object):
 
 
     def load_instance(self):
-        print("Loadinf id_to_instance", end="\r")
+        print("Loading id_to_instance")
         for file_id in range(27): #TODO replace 1 by 27
             id_to_instance_tmp = load_id_instance(self.folder, file_id)
             self.id_to_instance.update(id_to_instance_tmp)
             print(file_id, 'Size (in bytes):', sys.getsizeof(self.id_to_instance),'Number of elem:',len(self.id_to_instance), end="\r")
 
     def load_id_to_title(self):
-        print("Loading id_to_title...", end="\r")
+        print("Loading id_to_title...")
         self.id_to_title = dict()
         for file_id in range(27):
             id_to_title_tmp = load_id_title(self.folder, file_id)
@@ -37,7 +37,7 @@ class Wikidata_classification(object):
 
         id_to_vertex = load_pickle(self.parameter_gr['graph_id_to_vertex'])
 
-        print("Loading graph...", end="\r")
+        print("Loading graph...")
         graph = load_graph(self.parameter_gr['graph'])
         print("graph loaded")
 
@@ -92,7 +92,7 @@ class Wikidata_classification(object):
             if ner_class:
                 id_to_nerClass[id_] = ner_class
 
-        pickle_file(self.parameter_wd['wd_to_NER'], id_to_nerClass)
+        pickle_data(id_to_nerClass, self.parameter_wd['wd_to_NER'])
 
         convert_wp_to_(self.parameter_wd['wd_to_NER'], "/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
         print("Ratio of pages in more than 1 categories:",

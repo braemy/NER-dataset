@@ -1,13 +1,15 @@
+import calendar
+import datetime
+import json
 import os
-import shutil
 import pickle
 import time
 
-import datetime
-
-import json
 import yaml
 from tqdm import tqdm
+
+
+import constants as constants
 
 
 def get_current_milliseconds():
@@ -37,7 +39,7 @@ def create_folder(output_dir):
 def load_pickle(name):
     with open(name, "rb") as file:
         return pickle.load(file)
-def pickle_file(file_name, data):
+def pickle_data(data, file_name):
     with open(file_name, "wb") as file:
         pickle.dump(data,file,protocol=2)
 def load_id_title(data_folder, id_):
@@ -61,23 +63,22 @@ def json_load(file_path):
     with open(file_path, "r") as file:
         return json.load(file)
 
-def convert_wp_to_(destination_path, output_path):
+def convert_wp_to_(to_convert, output_path):
     wikipedia_to_wikidata = load_pickle("/dlabdata1/braemy/wikipedia_classification/wikipedia_to_wikidata.p")
     wikiTitle_to_id = json_load("/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json")
 
     # wikidata_to_ner = load_pickle("/dlabdata1/braemy/wikidata-classification/mapping_wikidata_to_NER.p")
-    wikidata_to_ner = load_pickle(destination_path)
+    wikidata_to_ner = load_pickle(to_convert)
     wp_to_ner_by_title = dict()
     for k_title, infos in tqdm(wikiTitle_to_id.items()):
-        print(k_title, infos)
         try:
-            wp_to_ner_by_title[k_title] = {'ner':wikidata_to_ner[wikipedia_to_wikidata[infos]], 'lc': infos['lc']}
+            wp_to_ner_by_title[k_title] = {'ner':wikidata_to_ner[wikipedia_to_wikidata[str(infos['id'])]], 'lc': infos['lc']}
         except:
             continue
 
     print("Number of entities:", len(wp_to_ner_by_title))
     # pickle_data(wp_to_ner_by_title, "/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
-    pickle_file(output_path,wp_to_ner_by_title )
+    pickle_data(wp_to_ner_by_title, output_path)
 
 def convert_wd_id_to_wp_title(wikidata_set, output_path):
     wikipedia_to_wikidata = load_pickle("/dlabdata1/braemy/wikipedia_classification/wikipedia_to_wikidata.p")
@@ -86,9 +87,28 @@ def convert_wd_id_to_wp_title(wikidata_set, output_path):
     wikidata_set_title = set()
     for k_title, infos in tqdm(wikiTitle_to_id.items()):
         try:
-            if wikipedia_to_wikidata[infos['id']] in wikidata_set:
+            if wikipedia_to_wikidata[str(infos['id'])] in wikidata_set:
                 wikidata_set_title.add(k_title)
         except:
             continue
     print("Number of entities:",len(wikidata_set_title))
-    pickle_file(output_path, wikidata_set_title)
+    pickle_data(wikidata_set_title, output_path)
+
+
+
+
+
+
+
+
+def is_date(token):
+    return token.capitalize() in calendar.day_abbr or \
+        token.capitalize() in calendar.day_name or \
+        token.capitalize() in calendar.month_abbr or \
+        token.capitalize() in calendar.month_name or \
+        "AD" in token
+
+
+def load_personal_titles():
+    title = load_pickle("/dlabdata1/braemy/CoNLL/personal_titles.p")
+    return title.union(constants.TITLE_ABBRS)
