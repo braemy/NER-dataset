@@ -23,4 +23,4 @@ hadoop fs -get hdfs:///user/braemy/alternative_titles.json/ /dlabdata1/braemy/wi
 #    python3 convert_to_dict.py --id $1
 #fi
 
-python3 convert_to_dict.py --id $1
+python3 convert_to_dict.py

@@ -11,6 +11,7 @@ for file in glob.glob(input_file):
 
         for line in file:
             line = json.loads(line)
+            #data[line['title']] = {'id': line['id'], 'lc':line['lc'], 'wd': line['wd']}
             data[line['title']] = {'id': line['id'], 'lc':line['lc']}
 
 with open(output_file, "w", encoding="utf-8") as file:
