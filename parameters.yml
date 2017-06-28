@@ -1,6 +1,7 @@
 wikidata:
   output_dir_collect_instance_subclass: /dlabdata1/braemy/wikidata-classification
-  output_dir: /dlabdata1/braemy/wikidata-classification/data2017-05-10_13-07-33-716641
+  #output_dir: /dlabdata1/braemy/wikidata-classification/data2017-05-10_13-07-33-716641
+  output_dir: /dlabdata1/braemy/wikidata-classification/data2017-06-22_17-06-42-74450/
   id_to_subclass: id_subclass_of_dict
   id_to_instance: id_instance_of_dict
   id_to_title: id_title_dict

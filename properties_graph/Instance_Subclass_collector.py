@@ -6,8 +6,8 @@ import boto.s3.connection
 import lxml.etree as ET
 
 from utils import *
-from properties_graph.Hierarchy import Hierarchy
-from properties_graph.Wikidata_entry import Wikidata_entry
+from Hierarchy import Hierarchy
+from Wikidata_entry import Wikidata_entry
 
 
 class Instance_subclass_collector(object):
@@ -48,9 +48,9 @@ class Instance_subclass_collector(object):
                     extract = True
                     iter_ += 1
                     if iter_ % 100000 == 0:
-                        print(iter_, 'Execution time: ', (time.time() - start) / 60, "minutes", end='\r')
-                    if iter_ % 1000000 == 0:
-                        hierarchy.save_dicts()
+                        print(iter_, 'Execution time: ', (time.time() - start) / 60, "minutes")
+                    #if iter_ % 1000000 == 0:
+                    #    hierarchy.save_dicts()
                 if tag == wiki + "text" and extract:
                     extract = False
                     content = elem.text
@@ -63,11 +63,10 @@ class Instance_subclass_collector(object):
                         instance_of_list, subclass_of_list = wikidata_entry.extract_instance_subclass()
                         hierarchy.add_instance_subclass(id_, title, instance_of_list, subclass_of_list)
                 elem.clear()
-            except Exception as err:
+            except:
                 print("Error")
                 log.exception("New error at entity:")
                 log.exception(content)
-                log.exception(err)
                 continue
 
         hierarchy.save_dicts()

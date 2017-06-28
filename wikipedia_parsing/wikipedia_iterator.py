@@ -110,4 +110,4 @@ class Wikipedia_iterator(object):
     def _increment_counter(self):
         self.counter += 1
         if self.counter % 10000 == 0:
-            print("{} pages processed".format(self.counter), end="\r")
+            print("{} pages processed".format(self.counter))

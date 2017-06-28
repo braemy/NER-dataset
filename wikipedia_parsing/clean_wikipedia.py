@@ -14,8 +14,11 @@ from utils import *
 
 def main(id_max, subpart=None):
     sc = SparkContext()
-    sc.addPyFile("/home/braemy/wikipedia-parsing/wiki_text.py")
-    sc.addPyFile("/home/braemy/wikipedia-parsing/utils.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_text.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/Trie.py")
+    sc.addPyFile("/home/braemy/NER-dataset/utils.py")
+    sc.addPyFile("/home/braemy/NER-dataset/constants.py")
+
 
 
     sqlContext = SQLContext(sc)
@@ -31,13 +34,12 @@ def main(id_max, subpart=None):
     input_filename = "hdfs:///user/braemy/enwiki.parquet"
     wikipediaDf = sqlContext.read.parquet(input_filename)
 
-    wikipediaDf.filter("title is not null")
     if id_max >= 0:
         wikipediaDf = wikipediaDf.filter(wikipediaDf['id']<id_max)
 
     if subpart is not None:
         wikipediaDf = wikipediaDf.filter(wikipediaDf['title'].isin(sport_set))
-    wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r).clean()) # wikipedia_to_wikidata, wikidata_to_ner,wikiTitle_to_id
+    wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r,cleaning=True).clean()) # wikipedia_to_wikidata, wikidata_to_ner,wikiTitle_to_id
 
     wiki_parsed = sqlContext.createDataFrame(wikipediaDf)
 
@@ -48,7 +50,7 @@ def main(id_max, subpart=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--id_max', type=int,   help='maximum id to process', default=-1)
-    parser.add_argument('--subpart', type=str,   help='parse only subpart', default=None)
+    parser.add_argument('--subpart', type=str,   help='parse only subpart', default=None, required=False)
 
     args = parser.parse_args()
     main(args.id_max, args.subpart)
