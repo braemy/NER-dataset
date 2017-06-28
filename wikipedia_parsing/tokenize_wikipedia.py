@@ -16,30 +16,34 @@ import argparse
 
 nltk.data.path.append('/home/braemy/nltk_data/')
 
-def main(id_max, subpart=None):
+def main(filter, subpart=None):
 
     sc = SparkContext()
     sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_text.py")
     sc.addPyFile("/home/braemy/NER-dataset/utils.py")
     sc.addPyFile("/home/braemy/NER-dataset/constants.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/Trie.py")
 
 
     sqlContext = SQLContext(sc)
     sqlContext.setConf("spark.sql.parquet.compression.codec","snappy")
 
     if subpart is not None:
-        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_"+str(id_max)+subpart+".parquet"
-        output_filename = "hdfs:///user/braemy/wikipedia_dataset_"+str(id_max)+subpart+".json"
+        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_-1"+subpart+".parquet"
+        output_filename = "hdfs:///user/braemy/wikipedia_dataset_"+str(filter)+subpart+".json"
     else:
-        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_"+str(id_max)+".parquet"
-        output_filename = "hdfs:///user/braemy/wikipedia_dataset_"+str(id_max)+".json"
+        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_-1"".parquet"
+        output_filename = "hdfs:///user/braemy/wikipedia_dataset_"+str(filter)+".json"
 
     wikipediaDf = sqlContext.read.parquet(input_filename)
+    wikipediaDf = wikipediaDf.sample(False,filter, seed=0)
 
     wp_to_ner_by_title = load_pickle("/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
-    personal_titles = load_personal_titles()
+    alternative_titles = load_json("/dlabdata1/braemy/wikidataNER/alternative_titles.json")
+    personal_titles =load_personal_titles()
+    sentence_starters =load_sentence_starter()
 
-    wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r, personal_titles).parse_spark(wp_to_ner_by_title)) #, parser=sentence_spliter,  tokenizer=tokenizer
+    wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r,args.method, alternative_titles, personal_titles, sentence_starters).parse_spark(wp_to_ner_by_title)) #, parser=sentence_spliter,  tokenizer=tokenizer
 
     wiki_parsed = sqlContext.createDataFrame(wikipediaDf)
 
@@ -50,8 +54,9 @@ def main(id_max, subpart=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--id_max', type=int,   help='maximum id to process')
+    parser.add_argument('--filter', type=float,   help='ratio of data to select')
     parser.add_argument('--subpart', type=str,   help='parse only subpart', default=None, required=False)
+    parser.add_argument('--method', type=str,   help='method to build dataset',choices=["wpb", "wp0", "wp2"])
 
     args = parser.parse_args()
-    main(args.id_max, args.subpart)
+    main(args.filter, args.subpart)

@@ -10,7 +10,7 @@ class Wiki_page(object):
             self.title = "NO-TITLE"
         self.id = id
         p = {'title': title, 'id': id, 'text': text}
-        self.text = Wiki_text(p)
+        self.text = Wiki_text(p, "wp0")
 
     def __str__(self):
         return self.title + " (" + self.id + ")"
@@ -21,8 +21,11 @@ class Wiki_page(object):
     #def print(self):
     #    self.text.print()
 
-    def parse(self, wp_to_ner_by_title=None,personal_titles=None):
-        self.text.parse(wp_to_ner_by_title,personal_titles=personal_titles)
+    def parse(self, wp_to_ner_by_title=None,personal_titles=None, alternative_titles=None):
+        self.text.parse(wp_to_ner_by_title,personal_titles=personal_titles, alternative_titles=alternative_titles)
+
+    def get_text(self):
+        return self.text.text
 
     def get_content(self):
         return self.text.parsed_text

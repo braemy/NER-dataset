@@ -15,6 +15,7 @@ from utils import *
 def main(id_max, subpart=None):
     sc = SparkContext()
     sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_text.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/Trie.py")
     sc.addPyFile("/home/braemy/NER-dataset/utils.py")
     sc.addPyFile("/home/braemy/NER-dataset/constants.py")
 
@@ -33,7 +34,6 @@ def main(id_max, subpart=None):
     input_filename = "hdfs:///user/braemy/enwiki.parquet"
     wikipediaDf = sqlContext.read.parquet(input_filename)
 
-    wikipediaDf.filter("title is not null")
     if id_max >= 0:
         wikipediaDf = wikipediaDf.filter(wikipediaDf['id']<id_max)
 
