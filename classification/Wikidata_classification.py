@@ -1,10 +1,10 @@
 import sys
 
-from graph_tool import *
-from graph_tool.search import *
+#from graph_tool import *
+#from graph_tool.search import *
 from tqdm import tqdm
 
-from classification.NER_mapping import NER_mapping
+from NER_mapping import NER_mapping
 from utils import *
 
 
@@ -18,19 +18,17 @@ class Wikidata_classification(object):
 
 
     def load_instance(self):
-        print("Loading id_to_instance")
-        for file_id in range(27): #TODO replace 1 by 27
-            id_to_instance_tmp = load_id_instance(self.folder, file_id)
-            self.id_to_instance.update(id_to_instance_tmp)
-            print(file_id, 'Size (in bytes):', sys.getsizeof(self.id_to_instance),'Number of elem:',len(self.id_to_instance), end="\r")
+        self.id_to_instance = load_instance(self.folder)
+
+    def load_subclass(self):
+        self.id_to_instance = load_subclass(self.folder)
 
     def load_id_to_title(self):
-        print("Loading id_to_title...")
-        self.id_to_title = dict()
-        for file_id in range(27):
-            id_to_title_tmp = load_id_title(self.folder, file_id)
-            self.id_to_title.update(id_to_title_tmp)
-            print('Size (in bytes):', sys.getsizeof(self.id_to_title), 'Number of elem:', len(self.id_to_title), end="\r")
+        self.id_to_title = load_id_to_title(self.folder)
+
+    def load_title_to_id(self):
+        self.title_to_id = load_title_to_id(self.folder)
+
 
     def build_mapping_to_NER_class(self):
         self.load_id_to_title()
@@ -88,7 +86,7 @@ class Wikidata_classification(object):
         ner_mapping = NER_mapping()
         id_to_nerClass = dict()
         for id_, instances in tqdm(self.id_to_instance.items()):
-            ner_class = ner_mapping.get_ner_class(instances)
+            ner_class = ner_mapping.classify_entity_by_instances(instances)
             if ner_class:
                 id_to_nerClass[id_] = ner_class
 
