@@ -9,7 +9,7 @@ import yaml
 from tqdm import tqdm
 
 
-import constants as constants
+import constants
 
 
 def get_current_milliseconds():
@@ -53,27 +53,27 @@ def load_id_instance(data_folder, id_):
     return load_pickle(os.path.join(data_folder, "id_instance_of_dict_"+ str(id_)+".p"))
 
 def load_parameters(name=None):
-    with open("parameters.yml", 'r') as ymlfile:
+    with open("../parameters.yml", 'r') as ymlfile:
         if name:
             return yaml.load(ymlfile)[name]
         else:
             return yaml.load(ymlfile)
 
-def json_load(file_path):
+def load_json(file_path):
     with open(file_path, "r") as file:
         return json.load(file)
 
 def convert_wp_to_(to_convert, output_path):
     wikipedia_to_wikidata = load_pickle("/dlabdata1/braemy/wikipedia_classification/wikipedia_to_wikidata.p")
-    wikiTitle_to_id = json_load("/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json")
+    wikiTitle_to_id = load_json("/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json")
 
     # wikidata_to_ner = load_pickle("/dlabdata1/braemy/wikidata-classification/mapping_wikidata_to_NER.p")
     wikidata_to_ner = load_pickle(to_convert)
     wp_to_ner_by_title = dict()
     for k_title, infos in tqdm(wikiTitle_to_id.items()):
         try:
-            wp_to_ner_by_title[k_title] = {'ner':wikidata_to_ner[wikipedia_to_wikidata[str(infos['id'])]], 'lc': infos['lc']}
-        except:
+            wp_to_ner_by_title[k_title] = {'ner':wikidata_to_ner[wikipedia_to_wikidata[infos['id']]], 'lc': infos['lc']}
+        except KeyError:
             continue
 
     print("Number of entities:", len(wp_to_ner_by_title))
@@ -82,7 +82,7 @@ def convert_wp_to_(to_convert, output_path):
 
 def convert_wd_id_to_wp_title(wikidata_set, output_path):
     wikipedia_to_wikidata = load_pickle("/dlabdata1/braemy/wikipedia_classification/wikipedia_to_wikidata.p")
-    wikiTitle_to_id = json_load("/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json")
+    wikiTitle_to_id = load_json("/dlabdata1/braemy/wikipedia_classification/wpTitle_to_wpId.json")
 
     wikidata_set_title = set()
     for k_title, infos in tqdm(wikiTitle_to_id.items()):
@@ -96,19 +96,35 @@ def convert_wd_id_to_wp_title(wikidata_set, output_path):
 
 
 
+def load_instance(folder):
+    print("Loading id_to_instance")
+    return load_pickle(os.path.join(folder, "id_instance_of_dict_0.p"))
+
+def load_subclass(folder):
+    print("Loading id_to_subclass")
+    return load_pickle(os.path.join(folder, "id_subclass_of_dict_0.p"))
+
+def load_id_to_title(folder):
+    print("Loading id_to_title...")
+    return load_pickle(os.path.join(folder, "id_title_dict_0.p"))
 
 
-
-
+def load_title_to_id(folder):
+    print("Loading title_to_id...")
+    return load_pickle(os.path.join(folder, "title_to_dict_0.p"))
 
 def is_date(token):
     return token.capitalize() in calendar.day_abbr or \
         token.capitalize() in calendar.day_name or \
         token.capitalize() in calendar.month_abbr or \
         token.capitalize() in calendar.month_name or \
-        "AD" in token
+        token in ["AD", "PM", "AM"]
 
 
 def load_personal_titles():
     title = load_pickle("/dlabdata1/braemy/CoNLL/personal_titles.p")
     return title.union(constants.TITLE_ABBRS)
+
+def load_sentence_starter():
+    starter =  {s.title() for s in load_pickle("/dlabdata1/braemy/CoNLL/sentence_starter.p")}
+    return starter.union(constants.SENTENCE_STARTER)
