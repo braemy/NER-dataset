@@ -46,7 +46,7 @@ class Wikipedia_iterator(object):
         self.END = "end"
         self.counter = 0
 
-    def next(self):
+    def next_elem(self):
         self.current_event, tmp = next(self.iterator)
         self.current_tag = tmp.tag
         self.current_content = tmp.text
@@ -58,7 +58,7 @@ class Wikipedia_iterator(object):
 
     def next_page(self):
         while not (self._is_page() and self._is_start_event()):
-            self.next()
+            self.next_elem()
             continue
         title = self._get_title()
         if title == 'Alabama':
@@ -72,25 +72,25 @@ class Wikipedia_iterator(object):
 
     def _get_title(self):
         while not (self._is_title() and self._is_start_event()):
-            self.next()
+            self.next_elem()
             continue
         return self.current_content
 
     def _get_id(self):
         while not (self._is_id() and self._is_start_event()):
-            self.next()
+            self.next_elem()
             continue
         return self.current_content
 
     def _get_text(self):
         text = ""
         while (not self._is_text()):
-            self.next()
+            self.next_elem()
             continue
         while self._is_text():
             if self.current_content is not None:
                 text += self.current_content
-            self.next()
+            self.next_elem()
         return text
 
     def _is_page(self):
@@ -109,5 +109,5 @@ class Wikipedia_iterator(object):
 
     def _increment_counter(self):
         self.counter += 1
-        if self.counter % 10000 == 0:
+        if self.counter % 100000 == 0:
             print("{} pages processed".format(self.counter))

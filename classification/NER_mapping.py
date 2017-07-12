@@ -21,7 +21,7 @@ class NER_mapping(object):
                     'Q33506', #museum
                     'Q2566598', #religious
                     'Q1248784', #airport
-                    'attraction', #attraction
+                    #'attraction', #attraction
                     ]
         self.LOC = ['Q3257686', #'locality'
                     'Q17334923', #location
@@ -90,7 +90,6 @@ class NER_mapping(object):
                 discovered.append(v)
                 if v in self.id_to_subclass:
                     for n in self.id_to_subclass[v][::-1]:
-                        # print(n)
                         S.append(n)
         return discovered
 
@@ -102,6 +101,7 @@ class NER_mapping(object):
             for o in v_iterator:
                 ner_class = self.get_ner_class(o)
                 if ner_class:
+                    print(o)
                     return ner_class
         return None
 

@@ -22,7 +22,7 @@ class Wiki_page(object):
     #    self.text.print()
 
     def parse(self, wp_to_ner_by_title=None,personal_titles=None, alternative_titles=None):
-        self.text.parse(wp_to_ner_by_title,personal_titles=personal_titles, alternative_titles=alternative_titles)
+        return self.text.parse(wp_to_ner_by_title,personal_titles=personal_titles)
 
     def get_text(self):
         return self.text.text

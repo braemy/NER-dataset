@@ -42,9 +42,10 @@ def load_pickle(name):
 def pickle_data(data, file_name):
     with open(file_name, "wb") as file:
         pickle.dump(data,file,protocol=2)
-def load_id_title(data_folder, id_):
 
+def load_id_title(data_folder, id_):
     return load_pickle(os.path.join(data_folder, "id_title_dict_" + str(id_) + ".p"))
+
 def load_title_id(data_folder, id_):
     return load_pickle(os.path.join(data_folder, "title_id_dict_"+ str(id_)+".p"))
 def load_id_subclass(data_folder, id_):
@@ -118,7 +119,7 @@ def is_date(token):
         token.capitalize() in calendar.day_name or \
         token.capitalize() in calendar.month_abbr or \
         token.capitalize() in calendar.month_name or \
-        token in ["AD", "PM", "AM"]
+        token in ["AD", "PM", "AM", "Century", "Millenium"]
 
 
 def load_personal_titles():
@@ -128,3 +129,12 @@ def load_personal_titles():
 def load_sentence_starter():
     starter =  {s.title() for s in load_pickle("/dlabdata1/braemy/CoNLL/sentence_starter.p")}
     return starter.union(constants.SENTENCE_STARTER)
+
+def split_tag(ner_class):
+    if ner_class == "O":
+        return None, "O"
+    return ner_class.split("-")
+
+
+def is_capitalized(token):
+    return token[0].isupper()

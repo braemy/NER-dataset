@@ -15,8 +15,6 @@ class Wikidata_classification(object):
         self.folder = self.parameter_wd['output_dir']
         self.id_to_instance = dict()
 
-
-
     def load_instance(self):
         self.id_to_instance = load_instance(self.folder)
 
@@ -29,6 +27,60 @@ class Wikidata_classification(object):
     def load_title_to_id(self):
         self.title_to_id = load_title_to_id(self.folder)
 
+    def classify_article(self):
+        self.load_instance()
+        ner_mapping = NER_mapping()
+        id_to_nerClass = dict()
+        for id_, instances in tqdm(self.id_to_instance.items()):
+            ner_class = ner_mapping.classify_entity_by_instances(instances)
+            if ner_class:
+                id_to_nerClass[id_] = ner_class
+
+        pickle_data(id_to_nerClass, self.parameter_wd['wd_to_NER'])
+
+        convert_wp_to_(self.parameter_wd['wd_to_NER'], "/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
+        print("Ratio of pages in more than 1 categories:",
+              round(float(ner_mapping.fuck_counter) / (len(id_to_nerClass)), 10) * 100, "%")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    def get_subset_of_wikidata(self, list_of_id, name):
+        file_path = os.path.join("/dlabdata1/braemy/wikidata-classification/", name + ".p")
+        # self.build_mapping(list_of_id, file_path)
+
+        self.load_instance()
+        wd_id_of_subclasses = load_pickle(file_path)
+        wd_set_output = set()
+        for id_, instances in tqdm(self.id_to_instance.items()):
+            for instance in instances:
+                if instance in wd_id_of_subclasses:
+                    wd_set_output.add(id_)
+        convert_wd_id_to_wp_title(wd_set_output,
+                                  "/dlabdata1/braemy/wikipedia_classification/wp_by_title_" + name + ".p")
 
     def build_mapping_to_NER_class(self):
         self.load_id_to_title()
@@ -67,31 +119,3 @@ class Wikidata_classification(object):
             pickle.dump(l, file)
         print(len(l), "elements in", file_path)
         return l
-
-    def get_subset_of_wikidata(self, list_of_id, name):
-        file_path = os.path.join("/dlabdata1/braemy/wikidata-classification/", name +".p")
-        #self.build_mapping(list_of_id, file_path)
-
-        self.load_instance()
-        wd_id_of_subclasses = load_pickle(file_path)
-        wd_set_output = set()
-        for id_, instances in tqdm(self.id_to_instance.items()):
-            for instance in instances:
-                if instance in wd_id_of_subclasses:
-                    wd_set_output.add(id_)
-        convert_wd_id_to_wp_title(wd_set_output, "/dlabdata1/braemy/wikipedia_classification/wp_by_title_" + name + ".p")
-
-    def classify_article(self):
-        self.load_instance()
-        ner_mapping = NER_mapping()
-        id_to_nerClass = dict()
-        for id_, instances in tqdm(self.id_to_instance.items()):
-            ner_class = ner_mapping.classify_entity_by_instances(instances)
-            if ner_class:
-                id_to_nerClass[id_] = ner_class
-
-        pickle_data(id_to_nerClass, self.parameter_wd['wd_to_NER'])
-
-        convert_wp_to_(self.parameter_wd['wd_to_NER'], "/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
-        print("Ratio of pages in more than 1 categories:",
-              round(float(ner_mapping.fuck_counter) / (len(id_to_nerClass)), 10) * 100, "%")

@@ -18,12 +18,16 @@ def main(id_max, subpart=None):
     sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/Trie.py")
     sc.addPyFile("/home/braemy/NER-dataset/utils.py")
     sc.addPyFile("/home/braemy/NER-dataset/constants.py")
-
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/alternative_titles.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_cleaners.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_infos.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_replacers.py")
 
 
     sqlContext = SQLContext(sc)
     sqlContext.setConf("spark.sql.parquet.compression.codec","snappy")
 
+    wp_to_ner_by_title = load_pickle("/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p")
 
 
     if subpart is not None:
@@ -39,12 +43,19 @@ def main(id_max, subpart=None):
 
     if subpart is not None:
         wikipediaDf = wikipediaDf.filter(wikipediaDf['title'].isin(sport_set))
-    wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r,cleaning=True).clean()) # wikipedia_to_wikidata, wikidata_to_ner,wikiTitle_to_id
+
+
+    wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r,cleaning=True).clean(wp_to_ner_by_title)) # wikipedia_to_wikidata, wikidata_to_ner,wikiTitle_to_id
 
     wiki_parsed = sqlContext.createDataFrame(wikipediaDf)
 
-    #wiki_parsed.map(lambda r: json.dumps({'title': r.title, 'text': r.text})).saveAsTextFile("hdfs:///user/braemy/wikipedia_cleaned_"+str(id_max)+".json")
+    #wiki_parsed.map(lambda r: json.dumps({'title': r.title, 'text': r.text, 'links':r.links})).saveAsTextFile("hdfs:///user/braemy/wikipedia_cleaned_"+str(id_max)+".json")
     wiki_parsed.write.parquet(output_filename)
+
+    output_filename = "hdfs:///user/braemy/alternative_titles2.json"
+    #alternative_titles = wikipediaDf.flatMap(lambda r: r.alt).filter(lambda x: len(x)>0).reduceByKey(lambda a, b: a + b)
+    #alternative_titles = sqlContext.createDataFrame(alternative_titles)
+    #alternative_titles.map(lambda r: json.dumps(r)).saveAsTextFile(output_filename)
 
 
 if __name__ == '__main__':

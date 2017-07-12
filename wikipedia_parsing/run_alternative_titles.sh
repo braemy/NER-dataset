@@ -12,9 +12,9 @@ hadoop fs -rm -r hdfs:///user/braemy/alternative_titles.json
 
 spark-submit --master yarn --num-executors 150 --executor-memory 2G --conf spark.yarn.executor.memoryOverhead=1024 alternative_titles.py
 #remove the output file in the file system
-rm -rf /dlabdata1/braemy/wikidataNER/alternative_titles/
+rm -rf /dlabdata1/braemy/wikidataNER/alternative_titles2/
 #get the data from hdfs to file sysmte
-hadoop fs -get hdfs:///user/braemy/alternative_titles.json/ /dlabdata1/braemy/wikidataNER/alternative_titles
+hadoop fs -get hdfs:///user/braemy/alternative_titles2.json/ /dlabdata1/braemy/wikidataNER/alternative_titles2
 # convert the data to conll format
 #if [ "$#" -eq 2 ];
 #then

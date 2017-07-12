@@ -1,29 +1,36 @@
-import string
 import sys
 
-import os
-import regex
+from pyspark.sql import *
+from pyspark.sql.functions import *
+from pyspark.sql.types import *
 
-#from pyspark.sql import *
-#from pyspark.sql.functions import *
-#from pyspark.sql.types import *
 sys.path.append("../")
+
 from utils import *
 from Trie import Trie
-import string
-#from spacy.en import English
 
+#from helpers.wiki_infos import *
+#from helpers.wiki_replacers import  *
+#from helpers.wiki_cleaners import *
+#from alternative_titles.alternative_titles import *
+from wiki_infos import *
+from wiki_replacers import  *
+from wiki_cleaners import *
+from alternative_titles import *
 import nltk
 nltk.data.path.append('/home/braemy/nltk_data/')
 
 
 
 class Wiki_text(object):
-    def __init__(self, row,dataset_method, alternative_titles=None, personal_titles=None, sentence_starter=None, cleaning=False):
+    def __init__(self, row,dataset_method=None, alternative_titles=None, personal_titles=None, sentence_starter=None, cleaning=False):
         self.text = row['text']
         self.title = row['title']
+
         if cleaning:
             self.id = row['id']
+        else:
+            self.links = row['links']
         self.indexes_to_link = dict()
         self.PERSONAL_TITLES = personal_titles
         self.alternative_titles = alternative_titles
@@ -31,58 +38,53 @@ class Wiki_text(object):
         self.SENTENCE_STARTER = sentence_starter
 
 
-    @staticmethod
-    def is_redirect(text):
-        return "#REDIRECT" in text
-
     def is_redirect_(self):
-
         return "#REDIRECT" in self.text
 
-    def parse(self,wp_to_ner_by_title, personal_titles,alternative_titles):
+    def parse(self,wp_to_ner_by_title, personal_titles):
         self.PERSONAL_TITLES=personal_titles
-        self.alternative_titles = alternative_titles
-        self.text = self.apply_regex(self.text)
-        subpart = self._map_title(self.text)
-        subpart = self._map_link(subpart)
-        self.text = subpart
+        disamb = is_disambiguation(self.text)
+        if disamb:
+            title_to_alternative_title = collect_title_disambiguation(self.title,self.text, wp_to_ner_by_title)
+            return title_to_alternative_title
+        else:
+            title_redirect = collect_title_redirect(self.title, self.text, wp_to_ner_by_title)
+            parsed = self.apply_regex(self.text)
+            title_bold = collect_title_first_paragraph(self.title, parsed, wp_to_ner_by_title)
+            return {self.title:list(title_redirect.union(title_bold))}
+
+        #subpart = self._map_title(self.text)
+        #subpart = self._map_link(subpart)
+        #self.text = subpart
 
 
-        self.parsed_text = self._parse(subpart,wp_to_ner_by_title=wp_to_ner_by_title)
-        self.parsed_text = self.build_dataset(self.parsed_text, wp_to_ner_by_title)
-        return self.parsed_text
+        #self.parsed_text = self._parse(subpart,wp_to_ner_by_title=wp_to_ner_by_title)
+        #self.parsed_text = self.build_dataset(self.parsed_text, wp_to_ner_by_title)
 
     def parse_spark(self, wp_to_ner_by_title):
-        parsed_text = ""
         text = self._map_title(self.text)
         text = self._map_link(text)
         sequence = self._parse(text, wp_to_ner_by_title=wp_to_ner_by_title)
         self.text = self.build_dataset(sequence, wp_to_ner_by_title)
         return Row(title=self.title, text=self.text)
 
-    def clean(self):
-        try:
+    def clean(self, wp_to_ner_by_title):
+        disamb = is_disambiguation(self.text)
+        if disamb:
+            title_to_alternative_title = collect_title_disambiguation(self.title, self.text, wp_to_ner_by_title)
             cleaned_text = self.apply_regex(self.text)
-            return Row(title=self.title, text = cleaned_text, back=0)
+            out_going_link = []
+        else:
+            out_going_link = collect_all_outgoing_link(self.text)
+            title_redirect = collect_title_redirect(self.title, self.text, wp_to_ner_by_title)
+            cleaned_text = self.apply_regex(self.text)
+            title_bold = collect_title_first_paragraph(self.title, cleaned_text, wp_to_ner_by_title)
+            title_to_alternative_title =  {self.title: list(title_redirect.union(title_bold))}
 
-        except:
-            return Row(title=self.title, text = self.text, back=1)
+        return Row(title=self.title, text = cleaned_text, disamb=int(disamb), alt=title_to_alternative_title, links=out_going_link)
+        #except RuntimeError:
+        #    return Row(title=self.title, text=self.text, error=1)
 
-    def _print_parsed_text(self):
-        for sentence in self.parsed_text:
-            for tuple in sentence:
-                print(tuple)
-            print("\n")
-
-
-
-    def _replace_wikt(self,text):
-        reg = r"\[\[wikt:([\S\s]*?)\|([\S\s]*?)\]\]"
-        result = regex.finditer(reg, text)
-        output = text
-        for r in result:
-            output = output.replace(text[r.start():r.end()], r.group(2), 1)
-        return output
 
 
 
@@ -103,12 +105,6 @@ class Wiki_text(object):
                 self.indexes_to_link[start] = ((start, start + len(replace_with)),link)
                 output = output.replace(text[r.start():r.end()], replace_with, 1)
         return output
-
-    def _print_mapping(self):
-        for _, ((start,end), link) in self.indexes_to_link.items():
-            print(self.text[start:end], (start, end), '-->', link)
-
-
 
     def _map_title(self, text):
         reg = r"\'\'\'([\S\s]*?)\'\'\'"
@@ -162,8 +158,8 @@ class Wiki_text(object):
         mapping = dict()
         trie = Trie()
         result = ""
-        if self.dataset_method not in ["wpb", "wp0"]:
-            self._add_alternative_titles(self.title, mapping, trie)
+        if self.dataset_method in ["wp2"]:
+            mapping, trie = self._add_all_alternative_titles() # TODO ADD CONDITION SEE page 72 of WIKINER
         for sentence in sequences:
             at_least_one_entity = False
             link_inferring = False
@@ -174,11 +170,12 @@ class Wiki_text(object):
             next_BIO_tag = ""
             keep_sentence = True
             for position, (token, POS, ner_class, link, lc) in enumerate(sentence):
-                if self.dataset_method not in ["wpb", "wp0"]:
-                    #add alternative title at the already existing ones
-                    self._add_alternative_titles(link, mapping, trie)  # TODO ADD CONDITION SEE page 72 of WIKINER
+                #Some link must be unlinked such as "List of ...":
+                if ner_class != "O":
+                    ner_class = self._unlinked(token, link, ner_class)
 
-                if self.dataset_method not in ["wpb", "wp0"] and ner_class == "O" and (self._is_capitalized(token) or link_inferring):
+
+                if self.dataset_method not in ["wpb", "wp0"] and ner_class == "O" and (is_capitalized(token) or link_inferring):
                     to_infer_token.append(token)
                     to_infer_POS.append(POS)
                     to_infer_position.append(position)
@@ -272,7 +269,7 @@ class Wiki_text(object):
 
     def _apply_wikiner_rules(self, token, POS, tag, link, next_BIO_tag):
         at_least_one_entity = False
-        BIO_tag, ner_type = self._split_tag(tag)
+        BIO_tag, ner_type = split_tag(tag)
         if self.dataset_method == "wpb":
             output = token + " " + POS + " " + tag + " " + (link if link else "") + " \n"
         else:
@@ -303,37 +300,39 @@ class Wiki_text(object):
             at_least_one_entity = True
         return output, next_BIO_tag, at_least_one_entity
 
+    def _add_all_alternative_titles(self):
+        mapping = dict()
+        trie = Trie()
+        self._add_title_as_alternative(mapping, trie)
+        for link in self.links:
+            self._add_alternative_titles(link, mapping, trie)
+        return mapping, trie
+
     def _add_alternative_titles(self, link, mapping, trie):
         if link in self.alternative_titles:
             alternatives = self.alternative_titles[link]
-            if link == "Mikhail Bakunin":
-                a=1
             for alt in alternatives:
-                if alt not in mapping:
+                if alt not in mapping and self._accept_title(alt):
                     trie.add(alt)
                     mapping[alt] = link  # TODO ADD CONDITION SEE page 72 of WIKINER
-        return mapping
 
-    @staticmethod
-    def _split_tag(ner_class):
-        if ner_class == "O":
-            return None, "O"
-        return ner_class.split("-")
+    def _add_title_as_alternative(self, mapping,trie):
+        if self._accept_title(self.title):
+            trie.add(self.title)
+            mapping[self.title] = self.title
+            #for part in self.title.split():
+                #if is_capitalized(part):
+                #    trie.add(part)
+                #    mapping[part] = self.title
 
-    def _infer_link(self, tokens, mapping, ):
-        for i in range(len(tokens)):
-            for j in range(len(tokens), 0, -1):
-                try:
-                    return mapping[" ".join(tokens[i:j])], i,j
-                except KeyError:
-                    continue
-        return None, 0, len(tokens)
-
+    def _accept_title(self, title):
+        if "List of " in title:
+            return False
+        else:
+            return True
 
 
-    @staticmethod
-    def _is_capitalized(token):
-        return token[0].isupper()
+
 
     def sentence_selection(self, token, ner_class, lowercase_template, position):
         """
@@ -386,8 +385,6 @@ class Wiki_text(object):
         else:
             return False
 
-
-
     def get_ner_class(self, token_idx, table):
         if token_idx in self.indexes_to_link:
             ((start, end), link) = self.indexes_to_link[token_idx]
@@ -403,109 +400,56 @@ class Wiki_text(object):
         else:
             return "O", False, None, -1, -1
 
-
     def apply_regex(self, text):
-        text = self._remove_ref(text)
-        text = self._remove_list(text)
-        text = self._remove_braces(text)
-        text = self._remove_comment(text)
-        text = self._remove_section(text)
-        text = self._remove_categories(text)
-        text = self._remove_math(text)
-        text = self._remove_table(text)
-        text = self._remove_sub(text)
-        text = self._remove_image(text)
-        text = self._remove_blockquote(text)
-        text = self._remove_sup(text)
-        text = self._remove_small(text)
-        text = self._remove_big(text)
-        text = self._remove_div(text)
-        text = self._remove_parenthesis(text)
-        text = self._remove_gallery(text)
-        text = self._remove_italic(text)
-        text = self._remove_source(text)
-        text = self._replace_wikt(text)  # TODO yes or no?
+        # Replace stuff
+        text = replace_wikt(text)
+        text = replace_lang(text)
+        text = replace_html_tags(text)
+        text = replace_code(text)
+        text = replace_tt(text)
+        text = replace_s(text)
+        # Remove stuff
+        text = remove_block(text, r"{{", r"}}")
+        text = remove_block(text, r"\{\|", r"\|\}")
+        text = remove_block(text, r"<ref[^/]*?>", r"<\/ref>")
+        # Remove stuff with specific balise first surch as {{algo-begin}}... {algo-end}} and then remove braces
+        text = remove_algorithm(text)
+        text = remove_comment(text)
+        text = remove_html_balise(text)
+        text = remove_nowiki(text)
+        text = remove_center(text)
+        text = remove_math(text)
+        text = remove_sub(text)
+        text = remove_image(text)
+        text = remove_blockquote(text)
+        text = remove_sup(text)
+        text = remove_small(text)
+        text = remove_big(text)
+        text = remove_div(text)
+        text = remove_gallery(text)
+        text = remove_italic(text)
+        text = remove_source(text)
 
+        text = remove_section(text)
+        text = remove_categories(text)
+        text = remove_empty_parenthesis(text)
+        text = remove_ref(text)
+
+        text = remove_br(text)
+        text = remove_list(text)
+        text = remove_quote(text)
+        text = remove_others(text)
+        text = remove_parenthesis_first_sentence(text)
+        text = remove_table(text)
+
+        text = text.replace("\n\n\n", "")
         return text
 
-
-
-    def _remove_ref(self,text):
-        #ref_regex = r"<ref[^\/]*?>[\S\s]*?<\/ref>|<ref[\S\s]*?\/>"
-        ref_regex = r"<ref[^\/]*?>([^<]|(?R))*?<\/ref>|<ref[\S\s]*?\/>"
-        text = regex.sub(ref_regex, "", text)
-        #remove everything that is below the section == References ==
-        text = text[:text.find("== References ==")]
-        return text[:text.find("==References==")]
-    def _remove_braces(self,text):
-        braces_regex = r"\{\{([^\{\}]|(?R))*\}\}"
-        return regex.sub(braces_regex, "", text)
-
-    def _remove_comment(self,text):
-        comment_regex = r"<!--[\S\s]*?-->"
-        return regex.sub(comment_regex, "", text)
-
-    def _remove_list(self,text):
-        list_regex = r"^(\*|#|:|;)+.*?\n"
-        return regex.sub(list_regex, "", text, flags=regex.MULTILINE)
-
-    def _remove_section(self,text):
-        section_regex = r"=+.*?=+"
-        return regex.sub(section_regex, "", text)
-
-    def _remove_categories(self,text):
-        categories_regex = r"\[\[:*Category:.*?\]\]"
-        return regex.sub(categories_regex, "", text)
-
-    def _remove_math(self,text):
-        math_regex = r"<math[^\/]*?>[\S\s]*?<\/math>"
-        return regex.sub(math_regex, "", text)
-
-    def _remove_table(self,text):
-        table_regex = r"\{\|[\S\s]*?(\{\|[\S\s]*?\|\}[\S\s]*?)*?\|\}"#\{\|([\S\s]|(?R))*?\|\}
-        return regex.sub(table_regex, "", text)
-
-    def _remove_sub(self,text):
-        sub_regex = r"<sub[^\/]*?>[\S\s]*?<\/sub>"
-        return regex.sub(sub_regex, "", text)
-    def _remove_image(self,text):
-        image_regex = r"\[\[(Image|File):[\S\s]*?(\[\[[\S\s]*?\]\][\S\s]*?)*?\]\]"  # TODO keep caption
-        return regex.sub(image_regex, "", text)
-
-    def _remove_blockquote(self,text):
-        blockquote_regex = r"<blockquote[^\/]*?>[\S\s]*?<\/blockquote>"
-        return regex.sub(blockquote_regex, "", text)
-
-    def _remove_sup(self,text):
-        sup_regex = r"<sup[^\/]*?>[\S\s]*?<\/sup>"
-        return regex.sub(sup_regex, "", text)
-    def _remove_small(self,text):
-        small_regex = r"<small[^\/]*?>[\S\s]*?<\/small>"
-        return regex.sub(small_regex, "", text)
-    def _remove_big(self,text):
-        big_regex = r"<big[^\/]*?>[\S\s]*?<\/big>"
-        return regex.sub(big_regex, "", text)
-    def _remove_div(self,text):
-        div_regex = r"<div[^\/]*?>[\S\s]*?<\/div>"
-        return regex.sub(div_regex, "", text)
-
-    def _remove_parenthesis(self,text):
-        empty_parenthesis = r"\(\s*\)"
-        return regex.sub(empty_parenthesis, "", text)
-
-    def _remove_gallery(self,text):
-        gallery = r"<gallery[^\/]*?>[\S\s]*?<\/gallery>"
-        return regex.sub(gallery, "", text)
-
-    def _remove_italic(self,text):
-        def replace(o):
-            return o.group(1) + o.group(3)
-        italic = r"([^']|^)('')([^'])"
-        return regex.sub(italic, replace, text, flags=regex.MULTILINE)
-
-    def _remove_source(self,text):
-        div_regex = r"<source[^\/]*?>[\S\s]*?<\/source>"
-        return regex.sub(div_regex, "", text)
+    def _unlinked(self, token, link, ner_class):
+        if self._accept_title(link):
+            return ner_class
+        else:
+            return "O"
 
 
 
@@ -519,58 +463,3 @@ class Wiki_text(object):
 
 
 
-
-
-
-
-
-
-
-    def _get_regex(self):
-        ref_regex = r"<ref[^\/]*?>[\S\s]*?<\/ref>|<ref[\S\s]*?\/>"
-        ref_regex = r"<ref[^\/]*?>[\S\s]*?<\/ref>|<ref[\S\s]*?\/>" #<ref[^\/]*?>([^<]|(?R))*?<\/ref>
-        braces_regex = r"\{\{([^\{\}]*|(?R))*\}\}"     #r"\{\{([^\{\}]|(?R))*\}\}"
-        comment_regex = r"<!--[\S\s]*?-->"
-        list_regex = r"^(\*|:|;)+.*?\n"
-        section_regex = r"=+.*?=+"
-        categories_regex = r"\[\[:*Category:.*?\]\]"
-        math_regex = r"<math[^\/]*?>[\S\s]*?<\/math>"
-        blockquote_regex = r"<blockquote[^\/]*?>[\S\s]*?<\/blockquote>"
-        table_regex = r"\{\|[\S\s]*?(\{\|[\S\s]*?\|\}[\S\s]*?)*?\|\}"
-        sub_regex = r"<sub[^\/]*?>[\S\s]*?<\/sub>"
-        sup_regex = r"<sup[^\/]*?>[\S\s]*?<\/sup>"
-        image_regex = r"\[\[(Image|File):[\S\s]*?(\[\[[\S\s]*?\]\][\S\s]*?)*?\]\]"         # TODO keep caption
-        small_regex = r"<small[^\/]*?>[\S\s]*?<\/small>"
-        big_regex = r"<big[^\/]*?>[\S\s]*?<\/big>"
-        div_regex = r"<div[^\/]*?>[\S\s]*?<\/div>"
-        empty_parenthesis = r"\(\)"
-        gallery = r"<gallery[^\/]*?>[\S\s]*?<\/gallery>"
-
-
-        return '|'.join([ref_regex,comment_regex,list_regex, section_regex, categories_regex, braces_regex,
-                         math_regex,table_regex,sub_regex,image_regex,sup_regex,blockquote_regex, small_regex,
-                         div_regex,empty_parenthesis,gallery,big_regex])
-
-
-
-
-    class ToBeInferred(object):
-        def __init__(self):
-            self.token = []
-            self.POS = []
-            self.position = []
-
-        def reset(self):
-            self.token = []
-            self.POS = []
-            self.position = []
-
-        def add(self, token, POS, position):
-            self.token.append(token)
-            self.token.append(POS)
-            self.position.append(position)
-
-        def get(self,start_index, end_index):
-            return self.token[start_index:end_index],\
-                   self.POS[start_index:end_index],\
-                   self.position[start_index:end_index]

@@ -7,12 +7,10 @@ import pickle
 
 
 
-input_file = "/dlabdata1/braemy/wikidataNER/alternative_titles/part*"
-output_file = "/dlabdata1/braemy/wikidataNER/alternative_titles.json"
+input_file = "/dlabdata1/braemy/wikidataNER/alternative_titles2/part*"
+output_file = "/dlabdata1/braemy/wikidataNER/alternative_titles2.json"
 data = {}
 
-with open("/dlabdata1/braemy/wikipedia_classification/wp_to_ner_by_title.p", "rb") as file:
-    wp_to_ner_by_title =  pickle.load(file)
 for i,file in enumerate(glob.glob(input_file)):
     if i %20 == 0:
         print(i)

@@ -7,6 +7,7 @@ from pyspark import SparkContext, SQLContext
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+import sys
 from wiki_text import Wiki_text
 
 from utils import *
@@ -23,16 +24,20 @@ def main(filter, subpart=None):
     sc.addPyFile("/home/braemy/NER-dataset/utils.py")
     sc.addPyFile("/home/braemy/NER-dataset/constants.py")
     sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/Trie.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/alternative_titles.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_cleaners.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_infos.py")
+    sc.addPyFile("/home/braemy/NER-dataset/wikipedia_parsing/wiki_replacers.py")
 
 
     sqlContext = SQLContext(sc)
     sqlContext.setConf("spark.sql.parquet.compression.codec","snappy")
 
     if subpart is not None:
-        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_-1"+subpart+".parquet"
-        output_filename = "hdfs:///user/braemy/wikipedia_dataset_"+str(filter)+subpart+".json"
+        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_-1.parquet"
+        output_filename = "hdfs:///user/braemy/wikipedia_dataset_"+str(filter)+"_"+subpart+".json"
     else:
-        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_-1"".parquet"
+        input_filename = "hdfs:///user/braemy/wikipedia_cleaned_-1.parquet"
         output_filename = "hdfs:///user/braemy/wikipedia_dataset_"+str(filter)+".json"
 
     wikipediaDf = sqlContext.read.parquet(input_filename)
@@ -42,14 +47,14 @@ def main(filter, subpart=None):
     alternative_titles = load_json("/dlabdata1/braemy/wikidataNER/alternative_titles.json")
     personal_titles =load_personal_titles()
     sentence_starters =load_sentence_starter()
+    if subpart:
+        print("Filter:", " ".join(subpart.split("_")))
+        wikipediaDf = wikipediaDf.where(wikipediaDf.title.like('%'+" ".join(subpart.split("_"))+'%')).map(lambda r: Wiki_text(r,args.method, alternative_titles, personal_titles, sentence_starters).parse_spark(wp_to_ner_by_title)) #, parser=sentence_spliter,  tokenizer=tokenizer
+    else:
+        wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r,args.method, alternative_titles, personal_titles, sentence_starters).parse_spark(wp_to_ner_by_title)) #, parser=sentence_spliter,  tokenizer=tokenizer
 
-    wikipediaDf = wikipediaDf.map(lambda r: Wiki_text(r,args.method, alternative_titles, personal_titles, sentence_starters).parse_spark(wp_to_ner_by_title)) #, parser=sentence_spliter,  tokenizer=tokenizer
-
-    wiki_parsed = sqlContext.createDataFrame(wikipediaDf)
-
-
-    wiki_parsed.map(lambda r: json.dumps({'title': r.title, 'text': r.text})).saveAsTextFile(output_filename)
-    #wiki_parsed.write.parquet("hdfs:///user/braemy/wikipedia_dataset_"+str(id_max)+".parquet")
+    wikipediaDf = sqlContext.createDataFrame(wikipediaDf)
+    wikipediaDf.map(lambda r: json.dumps({'title': r.title, 'text': r.text})).saveAsTextFile(output_filename)
 
 
 if __name__ == '__main__':

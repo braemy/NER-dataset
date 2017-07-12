@@ -91,3 +91,4 @@ ENV/
 */wikiner_data/
 */.idea/
 */notebooks
+wikipedia_parsing/wikipedia_pages/

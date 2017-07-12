@@ -10,6 +10,9 @@ from pyspark import SparkContext, SQLContext
 input_dump = 'hdfs:///user/braemy/input/enwiki-20170301-pages-articles.xml'
 output_parquet = 'hdfs:///user/braemy/enwiki.parquet'
 
+input_dump = 'hdfs:///user/braemy/input/dewiki-20170624-pages-articles.xml.bz2'
+output_parquet = 'hdfs:///user/braemy/dewiki.parquet'
+
 sc = SparkContext()
 
 sqlContext = SQLContext(sc)
