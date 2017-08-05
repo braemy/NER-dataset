@@ -1,10 +1,10 @@
-TITLE_ABBRS = {'Mr', 'Mrs', 'Dr', 'Ms', 'Prof', 'Sen', 'Rep', 'Dr', 'Gen', 'Gov',
+TITLE_ABBRS_EN = {'Mr', 'Mrs', 'Dr', 'Ms', 'Prof', 'Sen', 'Rep', 'Dr', 'Gen', 'Gov',
                    'Lt', 'Prof', 'Adm', 'Rev', 'Sens', 'Messrs', 'Reps', 'Col', 'St',
                    'Maj', 'M.D', 'Capt', 'Sgt', 'Capt'}
-NOT_TITLE = {'While', 'But', 'Speaker', 'American','Father', 'AND', 'Namibian', 'African',
+NOT_TITLE_EN = {'While', 'But', 'Speaker', 'American', 'Father', 'AND', 'Namibian', 'African',
              'Affairs'}
 
-SENTENCE_STARTER =  set(w.title() for w in [
+SENTENCE_STARTER_EN =  set(w.title() for w in [
 'secondly', 'all', 'consider', 'four', 'finally',
 'those', 'under', 'presently', 'returning', 'every', 'founded',
 'fearing', 'ten', 'past', 'further', 'situated', 'even', 'what',
