@@ -8,25 +8,16 @@ from tqdm import tqdm
 
 def convert_to_ner_file(language, method, id, keep_table, subpart=None):
     all_sentences = []
-    all_titles = ""
     folder = "/dlabdata1/braemy/wikidataNER/"
 
-    #if args.file_type is not None:
-    #    file_name = args.file_type
-    #else:
-    file_name = "wikipedia_dataset"
     if subpart:
         input_file = os.path.join(folder, language, method,
                      "wikipedia_dataset_{0}{1}_{2}/part*".format("with_tables_" if keep_table else "", str(float(id)), subpart))
 
-        #input_file = os.path.join(folder, language, method, file_name+"_"+str(float(id))+"_"+subpart, "part*")
         output_file = os.path.join(folder, language, method,
                      "wikipedia_dataset_{0}{1}_{2}/combined_{3}_{1}_{2}.txt".format("with_tables_" if keep_table else "", str(float(id)), subpart, method))
 
-        #output_file = os.path.join(folder, language, method, file_name+"_"+str(float(id))+"_"+subpart, "combined_"+method+"_"+str(float(id))+"_"+subpart+".txt")
     else:
-        #input_file = os.path.join(folder, language, method, file_name+"_"+str(float(id)), "part*")
-        #output_file = os.path.join(folder, language, method, file_name+"_"+str(float(id)), "combined_"+method+"_"+str(float(id))+".txt")
 
         input_file = os.path.join(folder, language, method,
                                   "wikipedia_dataset_{0}{1}/part*".format("with_tables_" if keep_table else "",
@@ -39,19 +30,11 @@ def convert_to_ner_file(language, method, id, keep_table, subpart=None):
     encoding= "utf-8"
 
     for file in tqdm(glob.glob(input_file)):
-
-        #print(predict_encoding(file))
-        #return
-
         with open(file, "r") as file:
 
             for line in file:
                 line = json.loads(line)
                 all_sentences.append(line['text'])
-    #if args.language == "de":
-    #    encoding = "iso-8859-1"
-    #else:
-    #    encoding = "utf-8"
     with codecs.open(output_file, "w", encoding) as file:
         file.write("".join(all_sentences))
     print("File converted: ", output_file)

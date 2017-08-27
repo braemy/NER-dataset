@@ -1,15 +1,18 @@
+# -*- coding: utf-8 -*-
+
+
 wikidata:
-  output_dir_collect_instance_subclass: /dlabdata1/braemy/wikidata-b_classification
-  #output_dir: /dlabdata1/braemy/wikidata-b_classification/data2017-05-10_13-07-33-716641
-  output_dir: /dlabdata1/braemy/wikidata-b_classification/data2017-06-22_17-06-42-74450/
+  output_dir_collect_instance_subclass: /dlabdata1/braemy/wikidata-a_2_classification
+  #output_dir: /dlabdata1/braemy/wikidata-a_2_classification/data2017-05-10_13-07-33-716641
+  output_dir: /dlabdata1/braemy/wikidata-a_2_classification/data2017-06-22_17-06-42-74450/
   id_to_subclass: id_subclass_of_dict
   id_to_instance: id_instance_of_dict
   id_to_title: id_title_dict
   title_to_id: title_id_dict
-  wd_to_NER: /dlabdata1/braemy/wikidata-b_classification/mapping_wikidata_to_NER.p
+  wd_to_NER: /dlabdata1/braemy/wikidata-a_2_classification/mapping_wikidata_to_NER.p
 
-graph_id_to_vertex: /dlabdata1/braemy/wikidata-b_classification/graph_id_to_vertex.p
-graph: /dlabdata1/braemy/wikidata-b_classification/graph.xml.gz
+graph_id_to_vertex: /dlabdata1/braemy/wikidata-a_2_classification/graph_id_to_vertex.p
+graph: /dlabdata1/braemy/wikidata-a_2_classification/graph.xml.gz
 
 
 output_folder: /dlabdata1/braemy/wikidataNER
@@ -17,17 +20,22 @@ output_folder: /dlabdata1/braemy/wikidataNER
 
 #Build Dataset#
 dataset_builder:
+  nltk_folder: /home/braemy/nltk_data/
   wikidataNER_folder: /dlabdata1/braemy/wikidataNER
   input_folder: /dlabdata1/braemy/data
   wd_to_NER: /dlabdata1/braemy/wikidataNER/mapping_wikidata_to_NER.p
   hadoop_folder: hdfs://iccluster050/user/braemy
   wikidata_dump: 20170622
   conll_folder: /dlabdata1/braemy/nerc-conll2003
+  debug: False
+  token_train: 10000000
+  token_valid: 100000
+  token_test: 100000
   de:
     language: de
     personal_title_threshold: 3
     wiki_dump: 20170620
-    filter: 0.001
+    filter: 0.3
     method: wp3
     num_executors: 50
     list_of:
@@ -37,7 +45,33 @@ dataset_builder:
       - Literatur
       - Weblinks
       - Anmerkungen
-    keep_table: True
+    keep_table: False
+    disambiguation: Begriffsklärung
+    threshold_allowed_cap: 100
+    token_train: 10000000
+    token_valid: 100000
+    token_test: 100000
+    #Step of the process to do
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title: False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId: False
+    map_wpTitle_to_NER: False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles: False
+    # clean wikipedia
+    clean_wikipedia_dump: False
+    put_wiki_clean_on_hadoop: False
+    # collect info
+    word_allowed_as_capitalized: True
+    collect_linguistal_infos: False
+    #build dataset
+    build_NER_dataset: True
+    spit_train_valid_test: True
+
   en:
     language: en
     list_of:
@@ -50,11 +84,31 @@ dataset_builder:
       - See also
     personal_title_threshold: 2
     wiki_dump: 20170620 #20170301
-    filter: 0.05
+    filter: 0.1
     method: wp3
-    num_executors: 50
-    keep_table: True
-    #subpart: team
+    num_executors: 150
+    keep_table: False
+    disambiguation: disambiguation
+    threshold_allowed_cap: 30
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title: False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId: False
+    map_wpTitle_to_NER: False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles: False
+    # clean wikipedia
+    clean_wikipedia_dump: False
+    put_wiki_clean_on_hadoop: False
+    # collect info
+    word_allowed_as_capitalized: True
+    collect_linguistal_infos: False
+    #build dataset
+    build_NER_dataset: False
+    spit_train_valid_test: False
 
 
 
@@ -63,8 +117,8 @@ dataset_builder:
     personal_title_threshold: 3
     wiki_dump: 20170620
     filter: 1
-    method: wp2
-    num_executors: 20
+    method: wp3
+    num_executors: 50
     list_of:
       - Liste
     section_to_remove:
@@ -73,5 +127,927 @@ dataset_builder:
       - Literatur
       - Referänze
       - Fuessnoote
-    keep_table: True
+    keep_table: False
+    disambiguation: Begriffsklärung
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
 
+
+  lb:
+    language: lb
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lëscht
+    section_to_remove:
+      - Um Spaweck
+      - Weblink
+      - Literatur
+      - Referenzen
+      - Kuckt och
+    keep_table: False
+    disambiguation: Homonymie
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  nds:
+    language: nds
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1
+    method: wp3
+    num_executors: 50
+    list_of:
+      - List
+    section_to_remove:
+      - Enkeld Nahwiesen
+      - Weblinks
+      - Weblink
+      - Literatur
+      - Footnoten
+      - Weblenken
+    keep_table: False
+    disambiguation: Mehrdüdig Begreep
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  ksh:
+    language: ksh
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1
+    method: wp3
+    num_executors: 50
+    list_of:
+      -  Liste
+    section_to_remove:
+      - Websigge
+      - Jätt z lääse
+    disambiguation: NOT_FOUND
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  pfl:
+    language: pfl
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1
+    method: wp3
+    num_executors: 50
+    list_of:
+      -  Lischd
+    section_to_remove:
+      - Weblinks
+      - Weblink
+      - Literatur
+      - Siehe auch
+      - Websaide
+    disambiguation: NOT_FOUND
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  pdc:
+    language: pdc
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1
+    method: wp3
+    num_executors: 50
+    list_of:
+      -  Lischd
+    section_to_remove:
+      - Seh aa
+      - Gewebbgleecher
+      - Guckt mol aa
+      - Auswenniche Gleecher
+    disambiguation: NOT_FOUND
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  #========
+  # ITALIAN
+  #========
+  it:
+    language: it
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 0.3
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - Voci correlate
+      - Altri progetti
+      - Collegamenti esterni
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  pms:
+    language: pms
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - Anliure esterne
+      - Lese ëdcò
+      - Anliure esterne
+      - Arferiment
+      - Bibbliografìa
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  lmo:
+    language: lmo
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - Ligamm de foeura
+      - Varda anca
+      - Colegamèncc estèrni
+      - Àrda pò a
+      - Bibbliografìa
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  scn:
+    language: scn
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - Viditi puru
+      - Liami sternu
+      - Artìculi culligati
+      - Bibbliografìa
+      - Nutanni e rifirimenti
+      - Lijami di fora
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  vec:
+    language: vec
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - NONE
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  nap:
+    language: nap
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - NONE
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  sc:
+    language: sc
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - NONE
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  co:
+    language: co
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Listinu
+    section_to_remove:
+      - Referenze
+      - Da vede dinò
+      - Ligami
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  rm:
+    language: rm
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lescha
+    section_to_remove:
+      - Colliaziuns
+      - Litteratura
+      - Annotaziuns
+      - Referenzas
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  lij:
+    language: lij
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - Veddi ascì
+      - Referenzas
+    keep_table: False
+    disambiguation: disambigua
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  fur:
+    language: fur
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Liste
+    section_to_remove:
+      - Referencis
+      - Cjale ancje
+      - Leams esternis
+    keep_table: False
+    disambiguation: disambigue
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+
+  #=======
+  # French
+  #=======
+  fr:
+    language: fr
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 0.3
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Liste
+    section_to_remove:
+      - Annexes
+      - Liens externes
+      - Articles connexes
+      - Notes et références
+      - Références
+    keep_table: False
+    disambiguation: homonymie
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  oc:
+    language: oc
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - Referéncias
+      - Nòtas & referéncias
+      - Bibliografia
+      - Vejatz tanben
+      - Ligams extèrnes
+      - Nòtas e referéncias
+    disambiguation: homonymie
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+  ca:
+    language: ca
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lista
+    section_to_remove:
+      - Enllaços externs
+      - Notes i referències
+      - Bibliografia
+      - Referències
+    disambiguation: desambiguació
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+  ht:
+    language: ht
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lis
+    section_to_remove:
+      - Kèk lyen
+      - Referans
+      - Foto Ayiti
+    disambiguation: NOT_FOUND
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+  wa:
+    language: wa
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Lisse
+    section_to_remove:
+      - NONE
+    disambiguation: omonimeye
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+
+
+  nrm:
+    language: nrm
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Liste
+    section_to_remove:
+      - Viyiz étout
+    disambiguation: NOT_FOUND
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+  pcd:
+    language: pcd
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Liste
+    section_to_remove:
+      - Loïens intarnètes
+      - Notes pi référinches
+    disambiguation: NOT_FOUND
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True
+
+  frp:
+    language: frp
+    personal_title_threshold: 3
+    wiki_dump: 20170620
+    filter: 1.0
+    method: wp3
+    num_executors: 50
+    list_of:
+      - Liste
+    section_to_remove:
+      - Lims de defôr
+      - Articllos liyês
+      - Vêde avouéc
+      - Notes et refèrences
+    disambiguation: homonimia
+    keep_table: False
+    threshold_allowed_cap: 3
+    #Wikidata classification
+    collect_instanceOf_subclassOf: False
+    classify_wikidata_title:       False
+    # Mapping wikipedia -> wikidata
+    map_wikipediaId_to_wikidataId: False
+    map_wpTitle_to_wpId:          False
+    map_wpTitle_to_NER:           False
+    # collect links, titles from wikipedia
+    collect_links_from_wikipedia: False
+    build_alternative_titles:     False
+    # clean wikipedia
+    clean_wikipedia_dump:         False
+    put_wiki_clean_on_hadoop:     False
+    # collect info
+    word_allowed_as_capitalized:  False
+    collect_linguistal_infos:     False
+    #build dataset
+    build_NER_dataset:            False
+    spit_train_valid_test:        True

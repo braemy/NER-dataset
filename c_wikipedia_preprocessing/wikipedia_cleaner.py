@@ -7,8 +7,8 @@ sys.path.append("../")
 
 from helper_remove import *
 from helper_replace import *
-from wiki_infos import *
 from alternative_titles import *
+from utils import *
 
 import nltk
 nltk.data.path.append('/home/braemy/nltk_data/')
@@ -20,39 +20,38 @@ from pyspark.sql.types import *
 
 
 class Wikipedia_cleaner(object):
-    def __init__(self, row):
-        self.text = row['text']
-        self.title = row['title']
-        self.id = row['id']
+    def __init__(self, row, parameters):
+        self.text = row.revision.text._VALUE#row['text']
+        self.title = row.title
+        self.id = row.id
+        self.parameters = parameters
 
     def is_redirect_(self):
         return "#REDIRECT" in self.text
 
-    def clean_localy(self, wp_to_ner_by_title):
+    def clean_localy(self):
         disamb = is_disambiguation(self.text)
         if disamb:
-            title_to_alternative_title = collect_title_disambiguation(self.title,self.text, wp_to_ner_by_title)
+            title_to_alternative_title = collect_title_disambiguation(self.title,self.text)
             return title_to_alternative_title, None
         else:
-            out_going_link = collect_all_outgoing_link(self.text, wp_to_ner_by_title)
-            title_redirect = collect_title_redirect(self.title, self.text, wp_to_ner_by_title)
+            out_going_link = collect_all_outgoing_link(self.text)
+            title_redirect = collect_title_redirect(self.title, self.text)
             parsed = self.apply_regex(self.text)
-            title_bold = collect_title_first_paragraph(self.title, parsed, wp_to_ner_by_title)
+            title_bold = collect_title_first_paragraph(self.title, parsed)
             return {self.title:list(title_redirect.union(title_bold))}, out_going_link
         #return text, out_going_link
 
     def collect_outgoing_link(self, wp_to_ner_by_title):
         text = replace_html_tags(self.text)
-        disamb = is_disambiguation(text)
+        disamb = self.title in wp_to_ner_by_title and wp_to_ner_by_title[self.title]["ner"] == "DISAM"
         if disamb:
-            title_to_alternative_title = collect_title_disambiguation(self.title, text, wp_to_ner_by_title)
+            title_to_alternative_title = collect_title_disambiguation(self.parameters, self.title, text)
             out_going_link = dict()
         else:
-            out_going_link = collect_all_outgoing_link(text, wp_to_ner_by_title)
-            title_to_alternative_title = collect_title_redirect(self.title, text, wp_to_ner_by_title)
-            title_to_alternative_title = {self.title: list(title_to_alternative_title)}
-        return Row(title=self.title, disamb=int(disamb), alt=title_to_alternative_title,
-                   links=out_going_link)
+            out_going_link = collect_all_outgoing_link(text)
+            title_to_alternative_title = {self.title: []}
+        return Row(title=self.title, disamb=int(disamb), alt=title_to_alternative_title, links=out_going_link)
 
     def clean_wikiExtractor(self):
         #TODO copy command line wikiextractor without printing

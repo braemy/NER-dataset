@@ -7,7 +7,7 @@ import sys
 
 
 sys.path.append(".")
-from utils import load_parameters_dataset_builder
+from utils import load_parameters_dataset_builder, check_hadoop_input_file
 
 from pyspark import SparkContext, SQLContext
 from pyspark.sql import *
@@ -22,17 +22,18 @@ INSTANCE_OF_ID = "P31"  # that class of which this subject is a particular examp
 # Different from P279 (subclass of).
 SUBCLASS_OF_ID = "P279"  # all instances of these items are instances of those items; this item is a class (subset) of
 # that item. Not to be confused with Property:P31 (instance of).
-INDUSTRIE = "P452"
-
+INDUSTRY = "P452"
 COORDINATE = "P625"
+HQ_LOCATION = "P159"
+SPORT= "P641"
 
 def toJson(r):
     if r['format'] != "application/json":
-        return Row(id=r["id"], title= None, instanceOf=None, subclassOf= None, org=None, loc=None)
+        return Row(id=None, title= None, instanceOf=None, subclassOf= None, org=None, loc=None, misc=None)
     content = json.loads(r['text'])
     title = getTitle(content)
-    instance_of_list, subclass_of_list, org, loc = extract_instance_subclass(content)
-    return Row(id=r["id"], title=title, instanceOf=instance_of_list, subclassOf=subclass_of_list, org=org, loc=loc)
+    instance_of_list, subclass_of_list, org, loc, misc = extract_instance_subclass(content)
+    return Row(id=r["id"], title=title, instanceOf=instance_of_list, subclassOf=subclass_of_list, org=org, loc=loc, misc=misc)
 
 def getTitle(line):
     try:
@@ -58,12 +59,13 @@ def concat_claims(claims):
 
 def extract_instance_subclass(line):
     if "claims" not in line:
-        return [], [], False, False
+        return [], [], False, False, False
     claims = line['claims']
     instance_of_list = []
     subclass_of_list = []
     org = False
     loc = False
+    misc = False
     if INSTANCE_OF_ID in claims:
         for inst in claims[INSTANCE_OF_ID]:
             elem = inst["mainsnak"]
@@ -86,17 +88,19 @@ def extract_instance_subclass(line):
                         subclass_of_list.append(elem["id"])
                     elif "numeric-id" in elem:
                         subclass_of_list.append("Q" + str(elem["numeric-id"]))
-    if INDUSTRIE in claims:
+    if INDUSTRY in claims or HQ_LOCATION in claims:
         org = True
     if COORDINATE in claims:
         loc = True
+    if SPORT in claims:
+        misc = True
 
     if not instance_of_list:
         instance_of_list = None
     if not subclass_of_list:
         subclass_of_list = None
 
-    return instance_of_list, subclass_of_list, org, loc
+    return instance_of_list, subclass_of_list, org, loc, misc
 
 def main(language):
     sc = SparkContext()
@@ -106,10 +110,7 @@ def main(language):
 
     parameters = load_parameters_dataset_builder(language, "parameters.yml")
     input_file = os.path.join(parameters["hadoop_folder"],"input/wikidatawiki-{0}-pages-articles.xml.bz2".format(parameters["wikidata_dump"]))
-    #input_file = os.path.join(parameters["hadoop_folder"],"input/small_wikidata.xml")
-    output_json = os.path.join(parameters["hadoop_folder"], 'wikidata.json')
-    #output_json = os.path.join(parameters["hadoop_folder"], 'small_wikidata.json')
-
+    check_hadoop_input_file(input_file, os.path.join(parameters["input_folder"], "wikidatawiki-{0}-pages-articles.xml.bz2".format(parameters["wikidata_dump"])))
 
     wikidata = sqlContext.read.format('com.databricks.spark.xml').options(rowTag='page').load(input_file)
     wikidata.printSchema()
@@ -121,38 +122,18 @@ def main(language):
 
     output_json = os.path.join(parameters["hadoop_folder"],"id_to_subclassOf.json")
     wikidata.select("id", "subclassOf").where(wikidata.subclassOf.isNotNull()).repartition(1).write.json(output_json)
-    output_json = os.path.join(parameters["hadoop_folder"], "id_to_instanceOf.json")
-    wikidata.select("id", "instanceOf").where(wikidata.instanceOf.isNotNull()).repartition(1).write.json(output_json)
+
+    output_json = os.path.join(parameters["hadoop_folder"], "id_title_instanceOf.json")
+    wikidata.select("id", "title", "instanceOf").repartition(1).write.json(output_json)
+
     output_json = os.path.join(parameters["hadoop_folder"], "id_to_loc.json")
     wikidata.select("id", "loc").where(wikidata.loc).repartition(1).write.json(output_json)
+
     output_json = os.path.join(parameters["hadoop_folder"], "id_to_org.json")
     wikidata.select("id", "org").where(wikidata.org).repartition(1).write.json(output_json)
-    output_json = os.path.join(parameters["hadoop_folder"], "id_to_title.json")
-    wikidata.select("id", "title").where(wikidata.org).repartition(1).write.json(output_json)
 
-
-
-    #with open(os.path.join(parameters["wikidataNER_folder"],"id_to_instanceOf.p"), "wb") as file:
-    #    pickle.dump(id_to_instanceOf, file)
-    #with open(os.path.join(parameters["wikidataNER_folder"],"id_to_loc.p"), "wb") as file:
-    #    pickle.dump(id_LOC, file)
-    #with open(os.path.join(parameters["wikidataNER_folder"],"id_to_org.p"), "wb") as file:
-    #    pickle.dump(id_ORG, file)
-    #with open(os.path.join(parameters["wikidataNER_folder"],"id_to_title.p"), "wb") as file:
-    #    pickle.dump(id_to_title, file)
-
-
-    #wikidata.map(lambda r: json.dumps({"id": r.id, "title":r.title, "instanceOf": r.instanceOf, "subclassOf": r.subclassOf, "org": r.org, "loc":r.loc})).saveAsTextFile(output_json)
-
-
-
-
-
-
-
-
-
-
+    output_json = os.path.join(parameters["hadoop_folder"], "id_to_misc.json")
+    wikidata.select("id", "misc").where(wikidata.misc).repartition(1).write.json(output_json)
 
 
 if __name__ == '__main__':
